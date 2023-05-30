@@ -17,6 +17,8 @@
   height: 24px;
   width: 24px;
   grid-area: button;
+  margin-left: 25px;
+  margin-top: 15px;
 }
 
 .profile__description {
@@ -49,4 +51,35 @@
   object-fit: cover;
   background-position: center;
   margin-right: 24px;
+}
+
+@media screen and (max-width: 480px) {
+  .profile {
+    background-color: pink;
+    flex-direction: column;
+  }
+
+  .profile__image {
+    margin-bottom: 26.25px;
+  }
+
+  .profile__info {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin-left: 62px;
+    margin-right: 62px;
+  }
+
+  .profile__discription {
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile__add-button {
+    margin: 0;
+    margin-top: 36px;
+    width: 100%;
+  }
 }
