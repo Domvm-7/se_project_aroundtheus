@@ -36,6 +36,17 @@
   border-radius: 0 0 10px 10px;
 }
 
+.card__title {
+  max-width: 220px;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 29.05px;
+  font-size: 24px;
+  font-weight: 900;
+}
+
 .card__like-button {
   background: transparent url(../images/like-inactive.svg) center no-repeat;
   width: 21px;

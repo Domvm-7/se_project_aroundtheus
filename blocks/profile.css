@@ -82,4 +82,9 @@
     margin-top: 36px;
     width: 100%;
   }
+
+  .footer {
+    padding-left: 19px;
+    padding-right: 19px;
+  }
 }
