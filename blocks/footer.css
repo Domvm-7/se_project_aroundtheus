@@ -8,3 +8,19 @@
   line-height: 21.78px;
   font-weight: 400;
 }
+
+@media screen and (max-width: 480px) {
+  .footer {
+    max-width: 282px;
+    max-height: 14px;
+    position: absolute;
+    left: 19px;
+    top: 2762px;
+  }
+  .footer__copyright {
+    color: #545454;
+    font-size: 14px;
+    line-height: 16.94px;
+    font-weight: 400;
+  }
+}
