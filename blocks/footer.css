@@ -7,20 +7,19 @@
   font-size: 18px;
   line-height: 21.78px;
   font-weight: 400;
+  margin: 0;
+  margin-bottom: 60px;
 }
 
 @media screen and (max-width: 480px) {
   .footer {
-    max-width: 282px;
-    max-height: 14px;
-    position: absolute;
-    left: 19px;
-    top: 2762px;
+    width: 282px;
+    height: 14px;
+    margin-top: 48px;
+    margin-bottom: 36px;
   }
   .footer__copyright {
-    color: #545454;
     font-size: 14px;
-    line-height: 16.94px;
-    font-weight: 400;
+    margin-left: 19px;
   }
 }
