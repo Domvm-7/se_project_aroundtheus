@@ -66,6 +66,12 @@
   margin-right: 24px;
 }
 
+@media screen and (max-width: 756px) {
+  .profile__edit-button {
+    margin-right: 34px;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .profile {
     flex-direction: column;
@@ -100,6 +106,9 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .profile__discription {
