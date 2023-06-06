@@ -98,6 +98,9 @@
     font-size: 22px;
     margin-right: 10px;
     margin-bottom: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .profile__info {
@@ -106,9 +109,6 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
   }
 
   .profile__discription {
@@ -117,6 +117,9 @@
     text-align: center;
     font-size: 14px;
     line-height: 17px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
   }
 
   .profile__add-button {
