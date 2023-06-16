@@ -95,3 +95,48 @@
   margin-left: 36px;
   margin-top: 48px;
 }
+
+@media screen and (max-width: 480px) {
+  .modal__container {
+    height: 322px;
+    width: 282px;
+  }
+
+  .modal__close {
+    height: 26px;
+    width: 26px;
+    position: absolute;
+    right: 9%;
+    left: 91%;
+    margin-bottom: 13px;
+  }
+
+  .modal__heading {
+    line-height: 21px;
+    font-size: 18px;
+    margin-left: 22px;
+    margin-top: 25px;
+  }
+
+  .modal__title {
+    width: 238px;
+    margin-left: 22px;
+  }
+
+  .modal__description {
+    width: 238px;
+    margin-left: 22px;
+  }
+
+  .modal__button {
+    height: 46px;
+    width: 238px;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin-left: 22px;
+    margin-top: 45px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
