@@ -77,11 +77,14 @@ function getCardElement(cardData) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
+  const trashButton = cardImageEl.querySelector(".card__trash-button");
   // find the delete button
 
   // add the event listener to the delete button
   //cardElement.remove();
-
+  //trashButton.addEventListener("click", () => {
+  //trashButton.cardImageEl.remove(cardData);
+  //});
   // add click listener to cardImageEl
   // open modal with preview image modal
 
