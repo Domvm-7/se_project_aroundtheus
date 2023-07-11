@@ -34,7 +34,7 @@
             ></button>
             <p class="profile__description">Explorer</p>
           </div>
-          <button class="profile__add-button"></button>
+          <button class="profile__add-button" id="profile-add-button"></button>
         </section>
         <section class="cards page__section">
           <ul class="cards__list"></ul>
@@ -44,25 +44,52 @@
         </footer>
       </main>
     </div>
+    <!-- Edit Modal -->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <form class="modal__form">
           <button class="modal__close" type="button"></button>
           <h2 class="modal__heading">Edit Profile</h2>
           <input
-            class="modal__input"
+            class="modal__input modal__input_type_name"
             type="text"
-            id="profile-title-input"
-            name="title"
+            id="profile-name-input"
+            name="name"
             placeholder="Name"
             required
           />
           <input
-            class="modal__input"
+            class="modal__input modal__input_type_description"
             type="text"
             id="profile-description-input"
             name="description"
             placeholder="Description"
+            required
+          />
+          <button class="modal__button" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+    <!-- Add Card Modal -->
+    <div class="modal" id="add-card-modal">
+      <div class="modal__container">
+        <form class="modal__form">
+          <button class="modal__close" type="button"></button>
+          <h2 class="modal__heading">New Place</h2>
+          <input
+            class="modal__input modal__input_type_title"
+            type="text"
+            id="card-title-input"
+            name="title"
+            placeholder="Title"
+            required
+          />
+          <input
+            class="modal__input modal__input_type_url"
+            type="text"
+            id="card-url-input"
+            name="url"
+            placeholder="Image link"
             required
           />
           <button class="modal__button" type="submit">Save</button>
