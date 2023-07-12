@@ -31,7 +31,7 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const addCardModal = document.querySelector("#add-card-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addCardForm = addCardModal.querySelector(".modal__form");
-const imageClick = document.querySelector("#image-modal");
+const cardImageModal = document.querySelector("#image-modal");
 
 /* Buttons and other DOM */
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -78,12 +78,13 @@ function getCardElement(cardData) {
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
-  const trashButton = cardImageEl.querySelector(".card__trash-button");
+  const trashButton = cardElement.querySelector(".card__trash-button");
 
-  //trashButton.addEventListener("click", () => {
-  // trashButton.cardElement.remove();
-  //});
+  trashButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
   // add click listener to cardImageEl
+  cardImageEl.addEventListener("click", () => {});
   // open modal with preview image modal
 
   likeButton.addEventListener("click", () => {
