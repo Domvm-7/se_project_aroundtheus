@@ -74,7 +74,7 @@ function handleAddCardFormSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
-  reset();
+  addCardForm.reset();
 }
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
