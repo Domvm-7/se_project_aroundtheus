@@ -31,6 +31,7 @@ const profileEditModal = document.querySelector("#profile-edit-modal");
 const addCardModal = document.querySelector("#add-card-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addCardForm = addCardModal.querySelector(".modal__form");
+const imageClick = document.querySelector("#image-modal");
 
 /* Buttons and other DOM */
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -78,12 +79,9 @@ function getCardElement(cardData) {
   const cardTitleEl = cardElement.querySelector(".card__title");
   const likeButton = cardElement.querySelector(".card__like-button");
   const trashButton = cardImageEl.querySelector(".card__trash-button");
-  // find the delete button
 
-  // add the event listener to the delete button
-  //cardElement.remove();
   //trashButton.addEventListener("click", () => {
-  //trashButton.cardImageEl.remove(cardData);
+  // trashButton.cardElement.remove();
   //});
   // add click listener to cardImageEl
   // open modal with preview image modal
