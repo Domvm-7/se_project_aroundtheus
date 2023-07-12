@@ -32,6 +32,7 @@ const addCardModal = document.querySelector("#add-card-modal");
 const profileEditForm = profileEditModal.querySelector(".modal__form");
 const addCardForm = addCardModal.querySelector(".modal__form");
 const cardImageModal = document.querySelector("#image-modal");
+const cardImageForm = cardImageModal.querySelector(".modal__container-image");
 
 /* Buttons and other DOM */
 const profileEditButton = document.querySelector("#profile-edit-button");
@@ -40,6 +41,7 @@ const addCardModalCloseButton = addCardModal.querySelector(".modal__close");
 const profileTitle = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 const addNewCardButton = document.querySelector(".profile__add-button");
+const imgModalCloseButton = cardImageModal.querySelector(".modal__close");
 
 /* Form Data */
 const profileTitleInput = document.querySelector("#profile-name-input");
@@ -72,6 +74,7 @@ function handleAddCardFormSubmit(e) {
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
+  reset();
 }
 function getCardElement(cardData) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -84,7 +87,7 @@ function getCardElement(cardData) {
     cardElement.remove();
   });
   // add click listener to cardImageEl
-  cardImageEl.addEventListener("click", () => {});
+  cardListEl.addEventListener("click", () => openPopup(cardImageEl));
   // open modal with preview image modal
 
   likeButton.addEventListener("click", () => {
