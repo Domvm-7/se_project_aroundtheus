@@ -113,7 +113,7 @@
 
 .modal__container-image {
   position: relative;
-  animation: fade-in 2s;
+  animation: fade-in 1s;
 }
 
 .modal__image-caption {
