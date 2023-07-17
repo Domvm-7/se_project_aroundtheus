@@ -53,10 +53,10 @@ const cardUrlInput = addCardForm.querySelector("#card-url-input");
 
 /* Funtions */
 function closePopup(modal) {
-  modal.classList.remove("modal_opened");
+  modal.classList.remove("modal__opened");
 }
 function openPopup(modal) {
-  modal.classList.add("modal_opened");
+  modal.classList.add("modal__opened");
 }
 function renderCard(cardData, wrapper) {
   const cardElement = getCardElement(cardData);
@@ -86,7 +86,8 @@ function getCardElement(cardData) {
     openPopup(cardImageModal);
     const modalImage = document.querySelector(".modal__image");
     modalImage.src = cardData.link;
-    modalImage.alt = cardData.text;
+    const modalCaption = document.querySelector(".modal__image-caption");
+    modalCaption.textContent = cardData.name;
   });
 
   trashButton.addEventListener("click", () => {
@@ -128,7 +129,7 @@ addCardModalCloseButton.addEventListener("click", () =>
 
 // add click listener to cardImageEl
 cardImageModal.addEventListener("click", () => {
-  openPopup(cardListEl);
+  openPopup(cardImageEl);
 });
 
 imgModalCloseButton.addEventListener("click", () => {

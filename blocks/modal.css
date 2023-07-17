@@ -28,18 +28,9 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal:hover .modal__form {
-  display: block;
-  animation: fade-in 2s;
-}
-
-.modal:not(:hover) .modal__form.did-fade-in {
-  display: block;
-  animation: fade-out 2s;
-}
-
-.modal_opened {
+.modal__opened {
   display: flex;
+  animation: fade-in 1s;
 }
 
 .modal__container {
@@ -122,11 +113,12 @@
 
 .modal__container-image {
   position: relative;
+  animation: fade-in 2s;
 }
 
 .modal__image-caption {
   position: absolute;
-  top: calc(100% + 5px);
+  top: calc(100% + 1px);
 }
 
 @media screen and (max-width: 480px) {
