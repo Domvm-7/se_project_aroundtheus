@@ -120,6 +120,15 @@
   cursor: pointer;
 }
 
+.modal__container-image {
+  position: relative;
+}
+
+.modal__image-caption {
+  position: absolute;
+  top: calc(100% + 5px);
+}
+
 @media screen and (max-width: 480px) {
   .modal__container {
     height: 322px;
