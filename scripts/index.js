@@ -131,7 +131,7 @@ addCardModalCloseButton.addEventListener("click", () =>
 imgModalCloseButton.addEventListener("click", () => {
   closePopup(cardImageModal);
 });
-
+/* Esc Key Close */
 document.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
     closePopup(profileEditModal);
@@ -140,14 +140,23 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
-//
-document.addEventListener("click", (e) => {
-  const modal = document.querySelector(modal);
-  if (!modal.contains(e.target)) {
-    closePopup(profileEditModal);
-    closePopup(addCardModal);
-    closePopup(cardImageModal);
+/* Click Outside Close */
+function closePopup(modal) {
+  modal.classList.remove("modal__opened");
+  document.removeEventListener("click", closeByOutsideClick);
+}
+function openPopup(modal) {
+  modal.classList.add("modal__opened");
+  document.addEventListener("click", closeByOutsideClick);
+}
+
+function closeByOutsideClick(e) {
+  const modal = document.querySelector(".modal__opened");
+
+  if (e.target.classList.contains("modal")) {
+    closePopup(modal);
   }
-});
+}
+
 /* For Each Loop */
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
