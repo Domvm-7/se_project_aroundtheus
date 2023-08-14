@@ -128,9 +128,16 @@ addCardModalCloseButton.addEventListener("click", () =>
   closePopup(addCardModal)
 );
 
-// add click listener to cardImageEl
 imgModalCloseButton.addEventListener("click", () => {
   closePopup(cardImageModal);
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.keyCode === 27) {
+    closePopup(profileEditModal);
+    closePopup(addCardModal);
+    closePopup(cardImageModal);
+  }
 });
 
 /* For Each Loop */
