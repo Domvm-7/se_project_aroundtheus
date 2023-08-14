@@ -49,12 +49,11 @@
   line-height: 29px;
   margin-left: 36px;
   margin-top: 34px;
-  margin-bottom: 54px;
 }
 
 .modal__input {
   margin-left: 36px;
-  margin-bottom: 30px;
+  margin-top: 30px;
   padding: 0 0 13px 0;
   width: 84%;
   min-height: 14px;
@@ -68,10 +67,10 @@
 
 .modal__input:last-of-type {
   padding: 0 0 13px 0;
-  margin-bottom: 48px;
 }
 
 .modal__button {
+  position: relative;
   height: 50px;
   width: 84%;
   background-color: #000;
@@ -81,6 +80,7 @@
   font-size: 18px;
   line-height: 22px;
   text-align: center;
+  margin-top: 36px;
   margin-left: 36px;
   margin-bottom: 36px;
   border: none;
@@ -103,6 +103,15 @@
 .modal__image-caption {
   position: absolute;
   top: calc(100% + 1px);
+}
+
+.modal__error {
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff0000;
+  position: relative;
+  left: 36px;
+  transition: opacity 0.3s;
 }
 
 @media screen and (max-width: 480px) {
