@@ -140,5 +140,14 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+//
+document.addEventListener("click", (e) => {
+  const modal = document.querySelector(modal);
+  if (!modal.contains(e.target)) {
+    closePopup(profileEditModal);
+    closePopup(addCardModal);
+    closePopup(cardImageModal);
+  }
+});
 /* For Each Loop */
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
