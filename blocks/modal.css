@@ -91,6 +91,10 @@
   cursor: pointer;
 }
 
+.modal__button_disabled {
+  opacity: 0.6;
+}
+
 .modal__close:hover {
   opacity: 0.6;
   cursor: pointer;

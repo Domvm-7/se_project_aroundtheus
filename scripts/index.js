@@ -52,12 +52,7 @@ const cardTitleInput = addCardForm.querySelector("#card-title-input");
 const cardUrlInput = addCardForm.querySelector("#card-url-input");
 
 /* Funtions */
-function closePopup(modal) {
-  modal.classList.remove("modal__opened");
-}
-function openPopup(modal) {
-  modal.classList.add("modal__opened");
-}
+
 function renderCard(cardData, wrapper) {
   const cardElement = getCardElement(cardData);
   wrapper.prepend(cardElement);
@@ -133,10 +128,9 @@ imgModalCloseButton.addEventListener("click", () => {
 });
 /* Esc Key Close */
 document.addEventListener("keydown", (e) => {
-  if (e.keyCode === 27) {
-    closePopup(profileEditModal);
-    closePopup(addCardModal);
-    closePopup(cardImageModal);
+  if (e.key === "Escape") {
+    const openedPopup = document.querySelector(".modal__opened");
+    closePopup(openedPopup);
   }
 });
 
@@ -151,7 +145,7 @@ function openPopup(modal) {
 }
 
 function closeByOutsideClick(e) {
-  const modal = document.querySelector(".modal__opened");
+  let modal = document.querySelector(".modal__opened");
 
   if (e.target.classList.contains("modal")) {
     closePopup(modal);
