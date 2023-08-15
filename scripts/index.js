@@ -127,6 +127,17 @@ imgModalCloseButton.addEventListener("click", () => {
   closePopup(cardImageModal);
 });
 /* Esc Key Close */
+
+function openPopup(modal) {
+  modal.classList.add("modal__opened");
+  document.addEventListener("keydown", closeModalByEscape);
+}
+
+function closePopup(modal) {
+  modal.classList.remove("modal__opened");
+  document.removeEventListener("keydown", closeModalByEscape);
+}
+
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     const openedPopup = document.querySelector(".modal__opened");
