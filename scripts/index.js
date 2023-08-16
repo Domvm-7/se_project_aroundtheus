@@ -52,7 +52,6 @@ const cardTitleInput = addCardForm.querySelector("#card-title-input");
 const cardUrlInput = addCardForm.querySelector("#card-url-input");
 
 /* Funtions */
-
 function renderCard(cardData, wrapper) {
   const cardElement = getCardElement(cardData);
   wrapper.prepend(cardElement);
@@ -126,32 +125,32 @@ addCardModalCloseButton.addEventListener("click", () =>
 imgModalCloseButton.addEventListener("click", () => {
   closePopup(cardImageModal);
 });
-/* Esc Key Close */
-
-function closeModalByEscape(event) {
-  if (event.key === "Escape") {
-    const openedPopup = document.querySelector(".modal_opened");
-    closePopup(openedPopup);
-  }
-}
-
-document.addEventListener("keydown", closeModalByEscape);
 
 /* Click Outside Close */
 function openPopup(modal) {
   modal.classList.add("modal_opened");
   document.addEventListener("click", closeByOutsideClick);
+  document.addEventListener("keydown", closeModalByEscape);
 }
 
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
   document.removeEventListener("click", closeByOutsideClick);
+  document.removeEventListener("keydown", closeModalByEscape);
 }
 
 function closeByOutsideClick(e) {
   if (e.target.classList.contains("modal")) {
     const modal = document.querySelector(".modal_opened");
     closePopup(modal);
+  }
+}
+
+/* Esc Key Close */
+function closeModalByEscape(event) {
+  if (event.key === "Escape") {
+    const openedPopup = document.querySelector(".modal_opened");
+    closePopup(openedPopup);
   }
 }
 
