@@ -125,7 +125,7 @@
 }
 
 .modal__input_type_error {
-  border-bottom: 1px #ff0000;
+  border-bottom: 1px solid #ff0000;
 }
 
 @media screen and (max-width: 480px) {
