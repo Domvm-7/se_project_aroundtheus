@@ -129,34 +129,34 @@ imgModalCloseButton.addEventListener("click", () => {
 /* Esc Key Close */
 
 function openPopup(modal) {
-  modal.classList.add("modal__opened");
+  modal.classList.add("modal_opened");
   document.addEventListener("keydown", closeModalByEscape);
 }
 
 function closePopup(modal) {
-  modal.classList.remove("modal__opened");
+  modal.classList.remove("modal_opened");
   document.removeEventListener("keydown", closeModalByEscape);
 }
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
-    const openedPopup = document.querySelector(".modal__opened");
+    const openedPopup = document.querySelector(".modal_opened");
     closePopup(openedPopup);
   }
 });
 
 /* Click Outside Close */
 function closePopup(modal) {
-  modal.classList.remove("modal__opened");
+  modal.classList.remove("modal_opened");
   document.removeEventListener("click", closeByOutsideClick);
 }
 function openPopup(modal) {
-  modal.classList.add("modal__opened");
+  modal.classList.add("modal_opened");
   document.addEventListener("click", closeByOutsideClick);
 }
 
 function closeByOutsideClick(e) {
-  let modal = document.querySelector(".modal__opened");
+  const modal = document.querySelector(".modal_opened");
 
   if (e.target.classList.contains("modal")) {
     closePopup(modal);

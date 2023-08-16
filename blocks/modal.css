@@ -13,7 +13,7 @@
   transition: all 0.5s ease;
 }
 
-.modal__opened {
+.modal_opened {
   visibility: visible;
   opacity: 1;
 }
@@ -65,10 +65,6 @@
   color: #000;
 }
 
-.modal__input_error {
-  border-bottom: 1px solid #ff0000;
-}
-
 .modal__input:last-of-type {
   padding: 0 0 13px 0;
 }
@@ -95,8 +91,14 @@
   cursor: pointer;
 }
 
+.modal__button_disabled:hover {
+  opacity: 0.2;
+  cursor: default;
+}
+
 .modal__button_disabled {
-  opacity: 0.6;
+  opacity: 0.2;
+  cursor: default;
 }
 
 .modal__close:hover {
@@ -120,6 +122,10 @@
   position: relative;
   left: 36px;
   transition: opacity 0.3s;
+}
+
+.modal__input_type_error {
+  border-bottom: 1px #ff0000;
 }
 
 @media screen and (max-width: 480px) {

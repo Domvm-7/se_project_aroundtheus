@@ -6,7 +6,7 @@ function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   inputEl.classList.add(inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;
   errorMessageEl.classList.add(errorClass);
-  inputEl.style.borderBottom = "1px solid red";
+  //inputEl.style.borderBottom = "1px solid red";
 }
 
 function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
@@ -14,7 +14,7 @@ function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   inputEl.classList.remove(inputErrorClass);
   errorMessageEl.textContent = "";
   errorMessageEl.classList.remove(errorClass);
-  inputEl.style.borderBottom = "";
+  //inputEl.style.borderBottom = "";
 }
 
 function checkInputValidity(formEl, inputEl, options) {
