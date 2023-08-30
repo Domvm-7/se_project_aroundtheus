@@ -3,34 +3,32 @@ import FormValidator from "../components/FormValidator.js";
 // enabling validation by calling enableValidation()
 // pass all the settings on call
 
-function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
+/* function showInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   const errorMessageEl = formEl.querySelector("#" + inputEl.id + "-error");
   inputEl.classList.add(inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;
   errorMessageEl.classList.add(errorClass);
-  //inputEl.style.borderBottom = "1px solid red";
-}
+} */
 
-function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
+/* function hideInputError(formEl, inputEl, { inputErrorClass, errorClass }) {
   const errorMessageEl = formEl.querySelector("#" + inputEl.id + "-error");
   inputEl.classList.remove(inputErrorClass);
   errorMessageEl.textContent = "";
   errorMessageEl.classList.remove(errorClass);
-  //inputEl.style.borderBottom = "";
-}
+} */
 
-function checkInputValidity(formEl, inputEl, options) {
+/* function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
     return showInputError(formEl, inputEl, options);
   }
   hideInputError(formEl, inputEl, options);
-}
+} */
 
-function hasInvalidInput(inputList) {
+/* function hasInvalidInput(inputList) {
   return !inputList.every((inputEl) => inputEl.validity.valid);
-}
+} */
 
-function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+/* function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   if (hasInvalidInput(inputEls)) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
@@ -38,7 +36,7 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   }
   submitButton.classList.remove(inactiveButtonClass);
   submitButton.disabled = false;
-}
+} */
 
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;

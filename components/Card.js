@@ -3,28 +3,37 @@ export default class Card {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
+    this._cardElement = null;
   }
 
   _setEventListeners() {
-    //".card__like-button"
-    this._cardElement
-      .querySelector(".card__like-button")
-      .addEventListener("click", () => {});
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
+    this._trashButton = this._cardElement.querySelector(".card__trash-button");
 
-    //".card__trash-button"
-    this._cardElement
-      .querySelector(".card__trash-button")
-      .addEventListener("click", () => {});
+    this._likeButton.addEventListener("click", () => {
+      likeButton.classList.toggle("card__like-button_active");
+    });
+
+    this._trashButton.addEventListener("click", () => {
+      cardElement.remove();
+    });
   }
 
   getView() {
-    this._cardElement = document
+    const cardTemplate = document
       .querySelector(this._cardSelector)
-      .content.querySelector(".card")
-      .cloneNode(true);
-    // get the card view
-    // set event listener
+      .content.querySelector(".card");
+
+    this._cardElement = cardTemplate.cloneNode(true);
+
+    const cardTitleEl = this._cardElement.querySelector(".card__title");
+    const cardImageEl = this._cardElement.querySelector(".card__image");
+
+    cardTitleEl.textContent = this._name;
+    cardImageEl.src = this._link;
+
     this._setEventListeners();
-    // return the card
+
+    return this._cardElement;
   }
 }
