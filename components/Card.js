@@ -10,14 +10,17 @@ export default class Card {
     this._likeButton = this._cardElement.querySelector(".card__like-button");
     this._trashButton = this._cardElement.querySelector(".card__trash-button");
 
-    this._likeButton.addEventListener("click", () => {
-      likeButton.classList.toggle("card__like-button_active");
-    });
-
-    this._trashButton.addEventListener("click", () => {
-      cardElement.remove();
-    });
+    this._likeButton.addEventListener("click", this._handleLikeButtonClick);
+    this._trashButton.addEventListener("click", this._handleTrashButtonClick);
   }
+
+  _handleLikeButtonClick = () => {
+    this._likeButton.classList.toggle("card__like-button_active");
+  };
+
+  _handleTrashButtonClick = () => {
+    this._cardElement.remove();
+  };
 
   getView() {
     const cardTemplate = document
@@ -31,6 +34,7 @@ export default class Card {
 
     cardTitleEl.textContent = this._name;
     cardImageEl.src = this._link;
+    cardImageEl.alt = "Image of " + this._name;
 
     this._setEventListeners();
 

@@ -157,4 +157,4 @@ function closeModalByEscape(event) {
 }
 
 /* For Each Loop */
-//initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
