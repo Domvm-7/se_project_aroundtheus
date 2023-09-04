@@ -12,7 +12,6 @@ export default class FormValidator {
       formElement.querySelectorAll(this._inputSelector)
     );
     this.submitButton = formElement.querySelector(this._submitButtonSelector);
-    this._setEventListeners();
   }
 
   _setEventListeners() {
@@ -31,6 +30,7 @@ export default class FormValidator {
   }
 
   enableValidation() {
+    this._setEventListeners();
     this.formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();
     });
@@ -86,6 +86,3 @@ export default class FormValidator {
     }
   }
 }
-const formElement = document.querySelector(settings.formSelector);
-const formValidator = new FormValidator(settings, formElement);
-formValidator.enableValidation();
