@@ -86,3 +86,6 @@ export default class FormValidator {
     }
   }
 }
+const formElement = document.querySelector(settings.formSelector);
+const formValidator = new FormValidator(settings, formElement);
+formValidator.enableValidation();

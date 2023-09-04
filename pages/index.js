@@ -180,8 +180,3 @@ function closeModalByEscape(event) {
 
 /* For Each Loop */
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
-
-/* Form Validator */
-const formElement = document.querySelector(settings.formSelector);
-const formValidator = new FormValidator(settings, formElement);
-formValidator.enableValidation();

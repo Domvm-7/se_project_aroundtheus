@@ -24,6 +24,10 @@ export default class Card {
     this._cardElement.remove();
   };
 
+  _openPopup() {
+    this._openPopup(cardImageModal);
+  }
+
   getView() {
     const cardTemplate = document
       .querySelector(this._cardSelector)
