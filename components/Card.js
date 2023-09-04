@@ -4,6 +4,7 @@ export default class Card {
     this._link = link;
     this._cardSelector = cardSelector;
     this._cardElement = null;
+    this._cardImageEl = document.querySelector(".card-image");
   }
 
   _setEventListeners() {
@@ -13,7 +14,7 @@ export default class Card {
 
     this._likeButton.addEventListener("click", this._handleLikeButtonClick);
     this._trashButton.addEventListener("click", this._handleTrashButtonClick);
-    this._cardImageEl.addEventListener("click", this._openPopup);
+    this._cardImageEl.addEventListener("click", this._openPopup.bind(this));
   }
 
   _handleLikeButtonClick = () => {
@@ -25,6 +26,7 @@ export default class Card {
   };
 
   _openPopup() {
+    const cardImageModal = document.querySelector(".modal__image");
     this._openPopup(cardImageModal);
   }
 
