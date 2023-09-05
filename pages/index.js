@@ -94,7 +94,11 @@ function handleAddCardFormSubmit(e) {
   closePopup(addCardModal);
   addCardForm.reset();
 }
-function getCardElement(cardData) {
+
+const cardTemplate =
+  document.querySelector("#card-template").content.firstElementChild;
+
+{
   const cardElement = cardTemplate.cloneNode(true);
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardTitleEl = cardElement.querySelector(".card__title");
@@ -120,8 +124,6 @@ function getCardElement(cardData) {
   cardTitleEl.textContent = cardData.name;
   cardImageEl.src = cardData.link;
   cardImageEl.alt = cardData.text;
-
-  return cardElement;
 }
 
 /* Form Listeners */
@@ -140,8 +142,6 @@ profileEditCloseButton.addEventListener("click", () => {
 /* Add new card */
 addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 
-const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
 addCardModalCloseButton.addEventListener("click", () =>
   closePopup(addCardModal)
 );

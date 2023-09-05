@@ -1,10 +1,11 @@
 export default class Card {
-  constructor({ name, link }, cardSelector) {
+  constructor({ name, link }, cardSelector, openPopup) {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
     this._cardElement = null;
     this._cardImageEl = document.querySelector(".card-image");
+    this._openPopup = openPopup;
   }
 
   _setEventListeners() {
@@ -14,9 +15,8 @@ export default class Card {
 
     this._likeButton.addEventListener("click", this._handleLikeButtonClick);
     this._trashButton.addEventListener("click", this._handleTrashButtonClick);
-    this._cardImageEl.addEventListener("click", this._openPopup.bind(this));
+    this._cardImageEl.addEventListener("click", () => this._openPopup());
   }
-
   _handleLikeButtonClick = () => {
     this._likeButton.classList.toggle("card__like-button_active");
   };
