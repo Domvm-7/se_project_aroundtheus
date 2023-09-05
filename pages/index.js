@@ -27,28 +27,6 @@ const initialCards = [
   },
 ];
 
-const cardData = {
-  name: "Yosemite Valley",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/yosemite.jpg",
-
-  name: "Lake Louise",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lake-louise.jpg",
-
-  name: "Bald Mountains",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/bald-mountains.jpg",
-
-  name: "Latemar",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/latemar.jpg",
-
-  name: "Vanoise National Park",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/vanoise.jpg",
-
-  name: "Lago di Braies",
-  link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/around-project/lago.jpg",
-};
-
-const card = new Card(cardData);
-
 /* Wrappers */
 const cardListEl = document.querySelector(".cards__list");
 const profileEditModal = document.querySelector("#profile-edit-modal");
@@ -77,8 +55,15 @@ const cardUrlInput = addCardForm.querySelector("#card-url-input");
 
 /* Funtions */
 function renderCard(cardData, wrapper) {
-  const card = new Card(cardData, "#card-template");
+  const card = new Card(cardData, "#card-template", handleImageClick);
   wrapper.prepend(card.getView());
+}
+function handleImageClick(cardData) {
+  console.log("Image was clicked");
+  console.log(cardData);
+  //open popup and pass cardData
+  cardImageModal.addEventListener("click", () => openPopup(cardImageModal));
+  closePopup(cardImageModal);
 }
 function handleProfileEditSubmit(e) {
   e.preventDefault();
@@ -93,37 +78,6 @@ function handleAddCardFormSubmit(e) {
   renderCard({ name, link }, cardListEl);
   closePopup(addCardModal);
   addCardForm.reset();
-}
-
-const cardTemplate =
-  document.querySelector("#card-template").content.firstElementChild;
-
-{
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImageEl = cardElement.querySelector(".card__image");
-  const cardTitleEl = cardElement.querySelector(".card__title");
-  const likeButton = cardElement.querySelector(".card__like-button");
-  const trashButton = cardElement.querySelector(".card__trash-button");
-  cardImageEl.addEventListener("click", () => {
-    openPopup(cardImageModal);
-    const modalImage = document.querySelector(".modal__image");
-    modalImage.src = cardData.link;
-    modalImage.alt = cardData.text;
-    const modalCaption = document.querySelector(".modal__image-caption");
-    modalCaption.textContent = cardData.name;
-  });
-
-  trashButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-
-  cardTitleEl.textContent = cardData.name;
-  cardImageEl.src = cardData.link;
-  cardImageEl.alt = cardData.text;
 }
 
 /* Form Listeners */
