@@ -1,5 +1,5 @@
 import Card from "../components/Card.js";
-//import FormValidator from "../components/FormValidator.js";
+import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
   {
@@ -144,6 +144,16 @@ function closeModalByEscape(event) {
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 /* Form Validator*/
-const formElement = document.querySelector(settings.formSelector);
+
+profileEditModal = document.querySelector("#profileEditModal");
+addCardModal = document.querySelector("#addCardModal");
+
+profileEditForm = profileEditModal.querySelector(".modal__form");
+addCardForm = addCardModal.querySelector(".modal__form");
+
+profileEditFormValidator = new FormValidator(settings, profileEditForm);
+addCardFormValidator = new FormValidator(settings, addCardForm);
+
 const formValidator = new FormValidator(settings, formElement);
+
 formValidator.enableValidation();
