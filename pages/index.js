@@ -1,4 +1,5 @@
 import Card from "../components/Card.js";
+//import FormValidator from "../components/FormValidator.js";
 
 const initialCards = [
   {
@@ -141,3 +142,8 @@ function closeModalByEscape(event) {
 
 /* For Each Loop */
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+
+/* Form Validator*/
+const formElement = document.querySelector(settings.formSelector);
+const formValidator = new FormValidator(settings, formElement);
+formValidator.enableValidation();
