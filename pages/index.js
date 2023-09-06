@@ -144,16 +144,17 @@ function closeModalByEscape(event) {
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 /* Form Validator*/
+const settings = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__input_type_error",
+  errorClass: "modal__error_visible",
+};
 
-profileEditModal = document.querySelector("#profileEditModal");
-addCardModal = document.querySelector("#addCardModal");
+const profileEditFormValidator = new FormValidator(settings, profileEditForm);
+const addCardFormValidator = new FormValidator(settings, addCardForm);
 
-profileEditForm = profileEditModal.querySelector(".modal__form");
-addCardForm = addCardModal.querySelector(".modal__form");
-
-profileEditFormValidator = new FormValidator(settings, profileEditForm);
-addCardFormValidator = new FormValidator(settings, addCardForm);
-
-const formValidator = new FormValidator(settings, formElement);
-
-formValidator.enableValidation();
+profileEditFormValidator.enableValidation();
+addCardFormValidator.enableValidation();
