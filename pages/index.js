@@ -63,14 +63,11 @@ function handleImageClick(cardData) {
   console.log("Image was clicked");
   console.log(cardData);
 
-  modalImageContainer.addEventListener("click", () => {
-    openPopup(cardImageModal);
-    const modalImage = document.querySelector(".modal__image");
-    modalImage.src = cardData.link;
-    modalImage.alt = cardData.text;
-    const modalCaption = document.querySelector(".modal__image-caption");
-    modalCaption.textContent = cardData.name;
-  });
+  const modalImage = document.querySelector(".modal__image");
+  modalImage.src = cardData.link;
+  modalImage.alt = cardData.text;
+  const modalCaption = document.querySelector(".modal__image-caption");
+  modalCaption.textContent = cardData.name;
 }
 
 function handleProfileEditSubmit(e) {
