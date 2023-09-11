@@ -70,7 +70,7 @@ function handleImageClick(cardData) {
   const modalCaption = document.querySelector(".modal__image-caption");
   modalCaption.textContent = cardData.name;
 
-  openPopup("card__image");
+  openPopup(cardImageModal);
 }
 
 function handleProfileEditSubmit(e) {
