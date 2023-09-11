@@ -45,18 +45,18 @@ export default class FormValidator {
   }
 
   _showInputError(inputElement) {
-    const errorMessageElement = this.formElement.querySelector({
-      inputElement,
-    });
+    const errorMessageElement = this.formElement.querySelector(
+      "#" + inputElement.id + "-error"
+    );
     inputElement.classList.add(this._inputErrorClass);
     errorMessageElement.textContent = inputElement.validationMessage;
     errorMessageElement.classList.add(this._errorClass);
   }
 
   _hideInputError(inputElement) {
-    const errorMessageElement = this.formElement.querySelector({
-      inputElement,
-    });
+    const errorMessageElement = this.formElement.querySelector(
+      "#" + inputElement.id + "-error"
+    );
     inputElement.classList.remove(this._inputErrorClass);
     errorMessageElement.textContent = "";
     errorMessageElement.classList.remove(this._errorClass);
