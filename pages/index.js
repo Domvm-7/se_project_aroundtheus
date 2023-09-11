@@ -59,6 +59,7 @@ function renderCard(cardData, wrapper) {
   const card = new Card(cardData, "#card-template", handleImageClick);
   wrapper.prepend(card.getView());
 }
+
 function handleImageClick(cardData) {
   console.log("Image was clicked");
   console.log(cardData);
@@ -68,6 +69,8 @@ function handleImageClick(cardData) {
   modalImage.alt = cardData.text;
   const modalCaption = document.querySelector(".modal__image-caption");
   modalCaption.textContent = cardData.name;
+
+  openPopup("card__image");
 }
 
 function handleProfileEditSubmit(e) {
