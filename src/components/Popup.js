@@ -4,18 +4,22 @@ export default class Popup {
   }
 }
 
-open() {
-    //  opens popup
+open();
+{
+  //  opens popup
 }
 
-close() {
-    // closes popup
+close();
+{
+  // closes popup
 }
 
-_handleEscClose() {
-    // listens for esc button
+_handleEscClose();
+{
+  // listens for esc button
 }
 
-setEventListeners(){
-    // sets event listeners
+setEventListeners();
+{
+  // sets event listeners
 }
