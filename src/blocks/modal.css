@@ -1,4 +1,4 @@
-.modal {
+.popup {
   display: flex;
   position: fixed;
   top: 0;
@@ -13,12 +13,12 @@
   transition: all 0.5s ease;
 }
 
-.modal_opened {
+.popup_opened {
   visibility: visible;
   opacity: 1;
 }
 
-.modal__container {
+.popup__container {
   position: relative;
   background-color: #fff;
   border-radius: 10px;
@@ -26,7 +26,7 @@
   height: 330px;
 }
 
-.modal__close {
+.popup__close {
   cursor: pointer;
   position: absolute;
   bottom: calc(100% + 5px);
@@ -40,7 +40,7 @@
   background-size: contain;
 }
 
-.modal__heading {
+.popup__heading {
   color: #000;
   width: 100%;
   min-height: 23px;
@@ -51,7 +51,7 @@
   margin-top: 34px;
 }
 
-.modal__input {
+.popup__input {
   margin-left: 36px;
   margin-top: 30px;
   padding: 0 0 13px 0;
@@ -65,11 +65,11 @@
   color: #000;
 }
 
-.modal__input:last-of-type {
+.popup__input:last-of-type {
   padding: 0 0 13px 0;
 }
 
-.modal__button {
+.popup__button {
   position: relative;
   height: 50px;
   width: 84%;
@@ -86,36 +86,36 @@
   border: none;
 }
 
-.modal__button:hover {
+.popup__button:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.modal__button_disabled:hover {
+.popup__button_disabled:hover {
   opacity: 0.2;
   cursor: default;
 }
 
-.modal__button_disabled {
+.popup__button_disabled {
   opacity: 0.2;
   cursor: default;
 }
 
-.modal__close:hover {
+.popup__close:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-.modal__container-image {
+.popup__container-image {
   position: relative;
 }
 
-.modal__image-caption {
+.popup__image-caption {
   position: absolute;
   top: calc(100% + 1px);
 }
 
-.modal__error {
+.popup__error {
   font-size: 12px;
   line-height: 15px;
   color: #ff0000;
@@ -124,17 +124,17 @@
   transition: opacity 0.3s;
 }
 
-.modal__input_type_error {
+.popup__input_type_error {
   border-bottom: 1px solid #ff0000;
 }
 
 @media screen and (max-width: 480px) {
-  .modal__container {
+  .popup__container {
     height: 322px;
     width: 282px;
   }
 
-  .modal__close {
+  .popup__close {
     height: 26px;
     width: 26px;
     position: absolute;
@@ -143,19 +143,19 @@
     margin-bottom: 13px;
   }
 
-  .modal__heading {
+  .popup__heading {
     line-height: 21px;
     font-size: 18px;
     margin-left: 22px;
     margin-top: 25px;
   }
 
-  .modal__input {
+  .popup__input {
     width: 84%;
     margin-left: 22px;
   }
 
-  .modal__button {
+  .popup__button {
     height: 46px;
     width: 84%;
     font-size: 18px;

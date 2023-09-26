@@ -43,14 +43,14 @@
         </footer>
       </main>
     </div>
-    <!-- Edit Modal -->
-    <div class="modal" id="profile-edit-modal">
-      <div class="modal__container">
-        <form class="modal__form">
-          <button class="modal__close" type="button"></button>
-          <h2 class="modal__heading">Edit Profile</h2>
+    <!-- Editpopup  -->
+    <div class="popup" id="profile-edit-popup">
+      <div class="popup__container">
+        <form class="popup__form">
+          <button class="popup__close" type="button"></button>
+          <h2 class="popup__heading">Edit Profile</h2>
           <input
-            class="modal__input modal__input_type_name"
+            class="popup__input popup__input_type_name"
             type="text"
             id="profile-name-input"
             name="name"
@@ -59,9 +59,9 @@
             maxlength="40"
             required
           />
-          <span class="modal__error" id="profile-name-input-error"></span>
+          <span class="popup__error" id="profile-name-input-error"></span>
           <input
-            class="modal__input modal__input_type_description"
+            class="popup__input popup__input_type_description"
             type="text"
             id="profile-description-input"
             name="description"
@@ -71,21 +71,21 @@
             required
           />
           <span
-            class="modal__error"
+            class="popup__error"
             id="profile-description-input-error"
           ></span>
-          <button class="modal__button" type="submit" disabled>Save</button>
+          <button class="popup__button" type="submit" disabled>Save</button>
         </form>
       </div>
     </div>
-    <!-- Add Card Modal -->
-    <div class="modal" id="add-card-modal">
-      <div class="modal__container">
-        <form class="modal__form">
-          <button class="modal__close" type="button"></button>
-          <h2 class="modal__heading">New Place</h2>
+    <!-- Add Card popup -->
+    <div class="popup" id="add-card-popup">
+      <div class="popup__container">
+        <form class="popup__form">
+          <button class="popup__close" type="button"></button>
+          <h2 class="popup__heading">New Place</h2>
           <input
-            class="modal__input modal__input_type_title"
+            class="popup__input popup__input_type_title"
             type="text"
             id="card-title-input"
             name="title"
@@ -94,30 +94,30 @@
             maxlength="30"
             required
           />
-          <span class="modal__error" id="card-title-input-error"></span>
+          <span class="popup__error" id="card-title-input-error"></span>
           <input
-            class="modal__input modal__input_type_url"
+            class="popup__input popup__input_type_url"
             type="text"
             id="card-url-input"
             name="url"
             placeholder="Image link"
             required
           />
-          <span class="modal__error" id="card-url-input-error"></span>
-          <button class="modal__button" type="submit">Create</button>
+          <span class="popup__error" id="card-url-input-error"></span>
+          <button class="popup__button" type="submit">Create</button>
         </form>
       </div>
     </div>
-    <!-- Image Modal -->
-    <div class="modal" id="image-modal">
-      <div class="modal__container-image">
-        <img class="modal__image" src="#" alt="#" />
+    <!-- Image popup -->
+    <div class="popup" id="image-popup">
+      <div class="popup__container-image">
+        <img class="popup__image" src="#" alt="#" />
         <button
-          class="modal__close"
-          id="modal-image-close-button"
+          class="popup__close"
+          id="popup-image-close-button"
           type="button"
         ></button>
-        <p class="modal__image-caption"></p>
+        <p class="popup__image-caption"></p>
       </div>
     </div>
     <template id="card-template">
