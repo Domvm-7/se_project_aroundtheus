@@ -40,6 +40,3 @@ export default class Popup {
     this.popupElement.addEventListener("click", this.closeByOutsideClick);
   }
 }
-
-const myPopup = new Popup({ popupSelector: ".popup" });
-myPopup.setEventListeners();
