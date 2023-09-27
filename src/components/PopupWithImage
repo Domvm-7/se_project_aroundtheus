@@ -1,15 +1,14 @@
 import Popup from "../components/Popup.js";
 
-class PopupWithForm extends Popup {
+class PopupWithImage extends Popup {
   constructor(popupSelector, handleFormSubmit) {
     super({ popupSelector });
-    this._popupForm = this._popupElement.querySelector(".popup__form");
+    this._popupForm = this._popupElement.querySelector(".popup__image");
     this._handleFormSubmit = handleFormSubmit;
   }
 }
 
 close();
 {
-  this._popupForm.reset();
   super.closePopup();
 }
