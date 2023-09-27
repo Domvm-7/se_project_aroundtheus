@@ -7,6 +7,10 @@ export default class PopupWithImage extends Popup {
     this._handleFormSubmit = handleFormSubmit;
   }
 
+  open() {
+    super.openPopup();
+  }
+
   close() {
     super.closePopup();
   }
