@@ -23,12 +23,6 @@ export default class FormValidator {
     });
   }
 
-  processForm() {
-    // Check field validity
-    // Change submit button state
-    // Add event handlers
-  }
-
   enableValidation() {
     this.formElement.addEventListener("submit", (evt) => {
       evt.preventDefault();

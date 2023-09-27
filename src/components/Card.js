@@ -4,7 +4,6 @@ export default class Card {
     this._link = link;
     this._cardSelector = cardSelector;
     this._cardElement = null;
-    this._cardImageEl = document.querySelector(".card-image");
     this._handleImageClick = handleImageClick;
   }
 
