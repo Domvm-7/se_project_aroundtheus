@@ -161,5 +161,5 @@ const addCardFormValidator = new FormValidator(settings, addCardForm);
 profileEditFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
 
-const Popup = new Popup({ popupSelector: ".popup" });
+const PopupWithForm = new PopupWithForm({ popupSelector: ".popup" });
 Popup.setEventListeners();
