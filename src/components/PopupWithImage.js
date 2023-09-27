@@ -6,9 +6,8 @@ export default class PopupWithImage extends Popup {
     this._popupForm = this._popupElement.querySelector(".popup__image");
     this._handleFormSubmit = handleFormSubmit;
   }
-}
 
-close();
-{
-  super.closePopup();
+  close() {
+    super.closePopup();
+  }
 }
