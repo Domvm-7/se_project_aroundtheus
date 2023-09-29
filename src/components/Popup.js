@@ -29,8 +29,8 @@ export default class Popup {
 
   closeByOutsideClick(e) {
     if (e.target.classList.contains("popup")) {
-      const popup = document.querySelector(".popup__opened");
-      this.closePopup(popup);
+      const Popup = document.querySelector(".popup__opened");
+      this.closePopup(Popup);
     }
   }
 
