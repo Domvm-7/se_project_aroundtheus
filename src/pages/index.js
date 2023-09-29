@@ -134,8 +134,8 @@ const addCardFormValidator = new FormValidator(settings, addCardForm);
 profileEditFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
 
-const CardPopup = new PopupWithForm("#add-card-popup");
-CardPopup.openPopup();
+// const addCardPopup = new PopupWithForm("#add-card-popup");
+// CardPopup.openPopup();
 
-const imagePopup = new PopupWithImage("#image-popup");
-imagePopup.openPopup();
+// const cardImagePopup = new PopupWithImage("#image-popup");
+// imagePopup.openPopup();
