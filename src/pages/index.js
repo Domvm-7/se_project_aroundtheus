@@ -105,7 +105,7 @@ profileEditCloseButton.addEventListener("click", () => {
 });
 
 /* Add new card */
-addNewCardButton.addEventListener("click", () => openPopup(addCardpopup));
+addNewCardButton.addEventListener("click", () => addCardPopup.openPopup());
 
 addCardpopupCloseButton.addEventListener("click", () =>
   closePopup(addCardpopup)
@@ -114,34 +114,6 @@ addCardpopupCloseButton.addEventListener("click", () =>
 imgpopupCloseButton.addEventListener("click", () => {
   closePopup(cardImagepopup);
 });
-
-// /* Click Outside Close */
-// function openPopup(popup) {
-//   popup.classList.add("popup_opened");
-//   document.addEventListener("click", closeByOutsideClick);
-//   document.addEventListener("keydown", closepopupByEscape);
-// }
-
-// function closePopup(popup) {
-//   popup.classList.remove("popup_opened");
-//   document.removeEventListener("click", closeByOutsideClick);
-//   document.removeEventListener("keydown", closepopupByEscape);
-// }
-
-// function closeByOutsideClick(e) {
-//   if (e.target.classList.contains("popup")) {
-//     const popup = document.querySelector(".popup_opened");
-//     closePopup(popup);
-//   }
-// }
-
-// /* Esc Key Close */
-// function closepopupByEscape(event) {
-//   if (event.key === "Escape") {
-//     const openedPopup = document.querySelector(".popup_opened");
-//     closePopup(openedPopup);
-//   }
-// }
 
 /* For Each Loop */
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
@@ -162,8 +134,8 @@ const addCardFormValidator = new FormValidator(settings, addCardForm);
 profileEditFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
 
-const addCardPopup = new PopupWithForm({ popupSelector: "#add-card-popup" });
+const addCardPopup = new PopupWithForm("#add-card-popup");
 addCardPopup.openPopup();
 
-const imagePopup = new PopupWithImage({ popupSelector: "#image-popup" });
+const imagePopup = new PopupWithImage("#image-popup");
 imagePopup.openPopup();
