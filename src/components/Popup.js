@@ -1,7 +1,11 @@
 export default class Popup {
   constructor(popupSelector) {
     this.popupSelector = popupSelector;
-    this.popupElement = document.querySelector();
+    this.popupElement = document.querySelector(
+      "#image-popup",
+      "#add-card-popup",
+      "#profile-edit-popup"
+    );
     this.openPopup = this.openPopup.bind(this);
     this.closePopup = this.closePopup.bind(this);
     this.closePopupByEscape = this.closePopupByEscape.bind(this);
