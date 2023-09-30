@@ -8,7 +8,7 @@ export default class PopupWithImage extends Popup {
   }
 
   open() {
-    super.openPopup();
+    this.super.openPopup();
   }
 
   close() {

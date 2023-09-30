@@ -1,5 +1,5 @@
 export default class Popup {
-  constructor(popupSelector) {
+  constructor({ popupSelector }) {
     this.popupSelector = popupSelector;
     this.popupElement = document.querySelector(
       "#image-popup",
@@ -8,7 +8,7 @@ export default class Popup {
     );
     this.openPopup = this.openPopup.bind(this);
     this.closePopup = this.closePopup.bind(this);
-    this.closePopupByEscape = this.closePopupByEscape.bind(this);
+    this.closePopupByEscape = this._handleEscClose.bind(this);
     this.closeByOutsideClick = this.closeByOutsideClick.bind(this);
   }
 
@@ -24,8 +24,8 @@ export default class Popup {
     document.removeEventListener("keydown", this.closePopupByEscape);
   }
 
-  closePopupByEscape(event) {
-    if (event.key === "Escape") {
+  _handleEscClose(e) {
+    if (e.key === "Escape") {
       const openedPopup = document.querySelector(".popup__opened");
       this.closePopup(openedPopup);
     }
