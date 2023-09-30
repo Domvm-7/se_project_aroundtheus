@@ -101,15 +101,13 @@ profileEditButton.addEventListener("click", () => {
   profileDescriptionInput.value = profileDescription.textContent;
 });
 profileEditCloseButton.addEventListener("click", () => {
-  closePopup(profileEditPopup);
+  profilePopup.close();
 });
 
 /* Add new card */
 addNewCardButton.addEventListener("click", () => cardPopup.open());
 
-addCardPopupCloseButton.addEventListener("click", () =>
-  closePopup(addCardPopup)
-);
+addCardPopupCloseButton.addEventListener("click", () => cardPopup.close);
 
 imgPopupCloseButton.addEventListener("click", () => {
   imagePopup.close();
