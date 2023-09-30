@@ -128,12 +128,18 @@ const settings = {
   errorClass: "popup__error_visible",
 };
 
+const realimagePopup = new PopupWithImage("popup__image");
 const profileEditFormValidator = new FormValidator(settings, profileEditForm);
 const addCardFormValidator = new FormValidator(settings, addCardForm);
 
 profileEditFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
 
-const CardPopup = new PopupWithForm("#add-card-popup");
+const profilePopup = new PopupWithForm("#profile-edit-popup");
+profilePopup.setEventListeners();
+
+const cardPopup = new PopupWithForm("#add-card-popup");
+cardPopup.setEventListeners();
 
 const ImagePopup = new PopupWithImage("#image-popup");
+ImagePopup.setEventListeners();
