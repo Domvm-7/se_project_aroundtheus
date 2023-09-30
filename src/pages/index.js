@@ -112,7 +112,7 @@ addCardPopupCloseButton.addEventListener("click", () =>
 );
 
 imgPopupCloseButton.addEventListener("click", () => {
-  closePopup(cardImagePopup);
+  imagePopup.close();
 });
 
 /* For Each Loop */
