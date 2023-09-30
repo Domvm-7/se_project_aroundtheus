@@ -128,7 +128,6 @@ const settings = {
   errorClass: "popup__error_visible",
 };
 
-const realimagePopup = new PopupWithImage("popup__image");
 const profileEditFormValidator = new FormValidator(settings, profileEditForm);
 const addCardFormValidator = new FormValidator(settings, addCardForm);
 
