@@ -13,4 +13,8 @@ export default class PopupWithImage extends Popup {
     this._caption.textContent = name;
     this.super.openPopup();
   }
+
+  close() {
+    super.closePopup();
+  }
 }
