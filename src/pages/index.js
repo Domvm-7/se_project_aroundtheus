@@ -109,7 +109,7 @@ profileEditCloseButton.addEventListener("click", () => {
 /* Add new card */
 addNewCardButton.addEventListener("click", () => cardPopup.open());
 
-addCardPopupCloseButton.addEventListener("click", () => cardPopup.close);
+addCardPopupCloseButton.addEventListener("click", () => cardPopup.close());
 
 imgPopupCloseButton.addEventListener("click", () => {
   imagePopup.close();
