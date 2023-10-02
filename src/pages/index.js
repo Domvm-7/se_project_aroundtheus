@@ -143,3 +143,17 @@ cardPopup.setEventListeners();
 
 const imagePopup = new PopupWithImage("#image-popup");
 imagePopup.setEventListeners();
+
+/* Section UserInfo */
+
+const cardList = new Section(
+  {
+    renderer: (item) => {
+      renderCard(item, cardList.container);
+    },
+  },
+  ".cards__list",
+  initialCards
+);
+
+const userProfile = new UserInfo(".profile__title", ".profile__description");
