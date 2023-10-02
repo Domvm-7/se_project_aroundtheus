@@ -144,16 +144,15 @@ cardPopup.setEventListeners();
 const imagePopup = new PopupWithImage("#image-popup");
 imagePopup.setEventListeners();
 
-/* Section UserInfo */
+/* Section */
 
 const cardList = new Section(
   {
     renderer: (item) => {
-      renderCard(item, cardList.container);
+      cardList.addItem(item);
     },
   },
-  ".cards__list",
-  initialCards
+  ".cards__list"
 );
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
