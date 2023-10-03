@@ -67,8 +67,8 @@ const cardUrlInput = addCardForm.querySelector("#card-url-input");
 
 function handleImageClick(cardData) {
   console.log("Image was clicked");
-  console.log(cardData);
-  imagePopup.open();
+  console.log();
+  imagePopup.open(cardData);
 
   // const popupImage = document.querySelector(".popup__image");
   // popupImage.src = cardData.link;
@@ -91,8 +91,8 @@ function handleAddCardFormSubmit(e) {
 }
 
 /* Form Listeners */
-profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-addCardForm.addEventListener("submit", handleAddCardFormSubmit);
+// profileEditForm.addEventListener("submit", handleProfileEditSubmit);
+// addCardForm.addEventListener("submit", handleAddCardFormSubmit);
 
 profileEditButton.addEventListener("click", () => {
   profilePopup.open();
