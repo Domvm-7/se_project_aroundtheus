@@ -120,7 +120,7 @@ const section = new Section(
     items: initialCards,
     renderer: (item) => {
       const cardData = renderCard(item);
-      section.addItem(cardListEl);
+      section.addItem(cardData);
     },
   },
   ".card__list"
