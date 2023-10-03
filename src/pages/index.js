@@ -73,9 +73,6 @@ function handleAddCardFormSubmit(inputValues) {
 }
 
 /* Form Listeners */
-// profileEditForm.addEventListener("submit", handleProfileEditSubmit);
-// addCardForm.addEventListener("submit", handleAddCardFormSubmit);
-
 profileEditButton.addEventListener("click", () => {
   profilePopup.open();
   profileTitleInput.value = profileTitle.textContent;
