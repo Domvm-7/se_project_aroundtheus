@@ -132,3 +132,4 @@ function renderCard(cardData, wrapper) {
 }
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
+userProfile.getUserInfo();
