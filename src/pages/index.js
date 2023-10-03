@@ -59,14 +59,12 @@ function handleImageClick(cardData) {
   imagePopup.open(cardData);
 }
 
-function handleProfileEditSubmit(InputValues) {
-  //e.preventDefault();
+function handleProfileEditSubmit(inputValues) {
   console.log(inputValues);
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
 }
 function handleAddCardFormSubmit(inputValues) {
-  //e.preventDefault();
   console.log(inputValues);
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
