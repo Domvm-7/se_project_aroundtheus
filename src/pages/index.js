@@ -60,22 +60,21 @@ const cardTitleInput = addCardForm.querySelector("#card-title-input");
 const cardUrlInput = addCardForm.querySelector("#card-url-input");
 
 /* Funtions */
-function renderCard(cardData, wrapper) {
-  const card = new Card(cardData, "#card-template", handleImageClick);
-  wrapper.prepend(card.getView());
-}
+// function renderCard(cardData, wrapper) {
+//   const card = new Card(cardData, "#card-template", handleImageClick);
+//   wrapper.prepend(card.getView());
+// }
 
 function handleImageClick(cardData) {
   console.log("Image was clicked");
   console.log(cardData);
-
-  const popupImage = document.querySelector(".popup__image");
-  popupImage.src = cardData.link;
-  popupImage.alt = cardData.text;
-  const popupCaption = document.querySelector(".popup__image-caption");
-  popupCaption.textContent = cardData.name;
-
   imagePopup.open();
+
+  // const popupImage = document.querySelector(".popup__image");
+  // popupImage.src = cardData.link;
+  // popupImage.alt = cardData.text;
+  // const popupCaption = document.querySelector(".popup__image-caption");
+  // popupCaption.textContent = cardData.name;
 }
 
 function handleProfileEditSubmit(e) {
@@ -106,12 +105,6 @@ profileEditCloseButton.addEventListener("click", () => {
 
 /* Add new card */
 addNewCardButton.addEventListener("click", () => cardPopup.open());
-
-addCardPopupCloseButton.addEventListener("click", () => cardPopup.close());
-
-imgPopupCloseButton.addEventListener("click", () => {
-  imagePopup.close();
-});
 
 /* For Each Loop */
 initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
@@ -144,13 +137,20 @@ imagePopup.setEventListeners();
 
 /* Section */
 
-const cardList = new Section(
+const section = new Section(
   {
+    items: initialCards,
     renderer: (item) => {
-      cardList.addItem(item);
+      const cardData = renderCard(item);
+      section.addItem(cardData);
     },
   },
-  ".cards__list"
+  ".card__list"
 );
+
+function renderCard(cardData) {
+  const card = new Card(cardData, "#card-template", handleImageClick);
+  return card.getView();
+}
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
