@@ -77,13 +77,15 @@ function handleImageClick(cardData) {
   // popupCaption.textContent = cardData.name;
 }
 
-function handleProfileEditSubmit(e) {
-  e.preventDefault();
+function handleProfileEditSubmit(InputValues) {
+  //e.preventDefault();
+  console.log(inputValues);
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
 }
-function handleAddCardFormSubmit(e) {
-  e.preventDefault();
+function handleAddCardFormSubmit(inputValues) {
+  //e.preventDefault();
+  console.log(inputValues);
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   renderCard({ name, link }, cardListEl);
@@ -128,10 +130,13 @@ profileEditFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
 
 /* Popup With*/
-const profilePopup = new PopupWithForm("#profile-edit-popup");
+const profilePopup = new PopupWithForm(
+  "#profile-edit-popup",
+  handleProfileEditSubmit
+);
 profilePopup.setEventListeners();
 
-const cardPopup = new PopupWithForm("#add-card-popup");
+const cardPopup = new PopupWithForm("#add-card-popup", handleAddCardFormSubmit);
 cardPopup.setEventListeners();
 
 const imagePopup = new PopupWithImage("#image-popup");
