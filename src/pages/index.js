@@ -99,12 +99,12 @@ profileEditButton.addEventListener("click", () => {
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
 });
-profileEditCloseButton.addEventListener("click", () => {
-  profilePopup.close();
-});
-addCardPopupCloseButton.addEventListener("click", () => {
-  cardPopup.close();
-});
+// profileEditCloseButton.addEventListener("click", () => {
+//   profilePopup.close();
+// });
+// addCardPopupCloseButton.addEventListener("click", () => {
+//   cardPopup.close();
+// });
 /* Add new card */
 addNewCardButton.addEventListener("click", () => cardPopup.open());
 
