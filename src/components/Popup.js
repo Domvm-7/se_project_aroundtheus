@@ -7,8 +7,6 @@ export default class Popup {
     this.closeByOutsideClick = this.closeByOutsideClick.bind(this);
     this.closeByClick = this.closeByClick.bind(this);
     this.closeButton = this.popupElement.querySelector(".popup__close");
-
-    console.log(this.closeButton);
   }
 
   open() {
@@ -40,7 +38,6 @@ export default class Popup {
   }
 
   closeByClick() {
-    console.log("hello");
     const Popup = document.querySelector(".popup_opened");
     this.close(Popup);
   }
@@ -54,8 +51,8 @@ export default class Popup {
         this._handleImageClick(image);
       });
     });
+
     this.popupElement.addEventListener("click", this.closeByOutsideClick);
-    //this.popupElement.addEventListener("click", this.setEventListeners);
     this.closeButton.addEventListener("click", this.closeByClick);
   }
 }
