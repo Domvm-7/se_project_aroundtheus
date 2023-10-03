@@ -150,9 +150,9 @@ const section = new Section(
   ".card__list"
 );
 
-function renderCard(cardData) {
+function renderCard(cardData, wrapper) {
   const card = new Card(cardData, "#card-template", handleImageClick);
-  return card.getView();
+  wrapper.prepend(card.getView());
 }
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
