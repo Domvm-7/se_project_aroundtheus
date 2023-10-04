@@ -42,6 +42,7 @@ profileEditButton.addEventListener("click", () => {
   const userData = userProfile.getUserInfo();
   profileTitleInput.value = userData.name;
   profileDescriptionInput.value = userData.job;
+  profileEditFormValidator.resetValidation();
 });
 
 /* Add new card */
