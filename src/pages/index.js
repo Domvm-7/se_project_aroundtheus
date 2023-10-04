@@ -120,7 +120,8 @@ const cardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      cardList.addItem(item);
+      const cardElement = renderCard(item);
+      cardList.addItem(cardElement);
     },
   },
   ".cards__list"
@@ -128,9 +129,10 @@ const cardList = new Section(
 
 cardList.renderItems();
 
-function renderCard(cardData, wrapper) {
+function renderCard(cardData) {
   const card = new Card(cardData, "#card-template", handleImageClick);
-  wrapper.prepend(card.getView());
+  return card.getView();
+  // wrapper.prepend(card.getView());
 }
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
