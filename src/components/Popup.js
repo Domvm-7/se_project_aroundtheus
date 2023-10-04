@@ -11,9 +11,7 @@ export default class Popup {
 
   open() {
     this.popupElement.classList.add("popup_opened");
-    document.addEventListener("click", this.closeByOutsideClick);
     document.addEventListener("keydown", this.closePopupByEscape);
-    document.addEventListener("click", this.closeButtons);
   }
 
   close() {
@@ -43,10 +41,6 @@ export default class Popup {
   }
 
   setEventListeners() {
-    const popupImages = Array.from(
-      this.popupElement.querySelectorAll(".popup__image")
-    );
-
     this.popupElement.addEventListener("click", this.closeByOutsideClick);
     this.closeButton.addEventListener("click", this.closeByClick);
   }
