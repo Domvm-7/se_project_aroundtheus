@@ -21,19 +21,18 @@ export default class Popup {
 
   _handleEscClose(e) {
     if (e.key === "Escape") {
-      const openedPopup = document.querySelector(".popup_opened");
-      this.close(openedPopup);
+      this.close();
     }
   }
 
   closeByOutsideClick(e) {
     if (e.target.classList.contains("popup")) {
-      this.close(Popup);
+      this.close();
     }
   }
 
   closeByClick() {
-    this.close(Popup);
+    this.close();
   }
 
   setEventListeners() {
