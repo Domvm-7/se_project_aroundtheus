@@ -51,8 +51,8 @@ const profileTitleInput = document.querySelector("#profile-name-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-const cardTitleInput = addCardForm.querySelector("#card-title-input");
-const cardUrlInput = addCardForm.querySelector("#card-url-input");
+// const cardTitleInput = addCardForm.querySelector("#card-title-input");
+// const cardUrlInput = addCardForm.querySelector("#card-url-input");
 
 /* Funtions */
 function handleImageClick(cardData) {
@@ -61,8 +61,10 @@ function handleImageClick(cardData) {
 }
 function handleProfileEditSubmit(inputValues) {
   console.log(inputValues);
-  profileTitle.textContent = profileTitleInput.value;
-  profileDescription.textContent = profileDescriptionInput.value;
+  const userData = userProfile.settUserInfo();
+  profileTitleInput.value = _nameElement();
+  profileDescriptionInput.value = _jobElement();
+  userProfile.setUserInfo();
 }
 function handleAddCardFormSubmit({ name, link }) {
   const card = renderCard({ name, link }, cardListEl);
@@ -131,4 +133,3 @@ function renderCard(cardData) {
 }
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
-// userProfile.getUserInfo();
