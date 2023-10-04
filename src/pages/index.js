@@ -88,6 +88,7 @@ const profileEditFormValidator = new FormValidator(settings, profileEditForm);
 const addCardFormValidator = new FormValidator(settings, addCardForm);
 
 profileEditFormValidator.enableValidation();
+addCardFormValidator.resetValidation();
 addCardFormValidator.enableValidation();
 
 /* Popup With*/
