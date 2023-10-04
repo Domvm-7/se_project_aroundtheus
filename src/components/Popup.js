@@ -46,11 +46,6 @@ export default class Popup {
     const popupImages = Array.from(
       this.popupElement.querySelectorAll(".popup__image")
     );
-    popupImages.forEach((image) => {
-      image.addEventListener("click", () => {
-        this._handleImageClick(image);
-      });
-    });
 
     this.popupElement.addEventListener("click", this.closeByOutsideClick);
     this.closeButton.addEventListener("click", this.closeByClick);

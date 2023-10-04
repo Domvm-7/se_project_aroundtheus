@@ -57,6 +57,7 @@ const cardUrlInput = addCardForm.querySelector("#card-url-input");
 /* Funtions */
 function handleImageClick(cardData) {
   imagePopup.open(cardData);
+  console.log("hello");
 }
 function handleProfileEditSubmit(inputValues) {
   console.log(inputValues);
@@ -67,6 +68,7 @@ function handleAddCardFormSubmit({ name, link }) {
   const card = renderCard({ name, link }, cardListEl);
   cardList.addItem(card);
   addCardForm.reset();
+  addCardFormValidator.resetValidation();
 }
 
 /* Form Listeners */
