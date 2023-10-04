@@ -75,6 +75,7 @@ profileEditButton.addEventListener("click", () => {
   profilePopup.open();
   profileTitleInput.value = profileTitle.textContent;
   profileDescriptionInput.value = profileDescription.textContent;
+  userProfile.getUserInfo();
 });
 
 /* Add new card */
@@ -129,4 +130,4 @@ function renderCard(cardData) {
 }
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
-userProfile.getUserInfo();
+// userProfile.getUserInfo();
