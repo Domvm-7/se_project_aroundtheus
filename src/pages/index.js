@@ -42,8 +42,6 @@ const addCardForm = addCardPopup.querySelector(".popup__form");
 
 /* Buttons and other DOM */
 const profileEditButton = document.querySelector("#profile-edit-button");
-const profileTitle = document.querySelector(".profile__title");
-const profileDescription = document.querySelector(".profile__description");
 const addNewCardButton = document.querySelector(".profile__add-button");
 
 /* Form Data */
@@ -51,20 +49,13 @@ const profileTitleInput = document.querySelector("#profile-name-input");
 const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
-// const cardTitleInput = addCardForm.querySelector("#card-title-input");
-// const cardUrlInput = addCardForm.querySelector("#card-url-input");
 
 /* Funtions */
 function handleImageClick(cardData) {
   imagePopup.open(cardData);
-  console.log("hello");
 }
 function handleProfileEditSubmit(inputValues) {
-  console.log(inputValues);
-  const userData = userProfile.settUserInfo();
-  profileTitleInput.value = _nameElement();
-  profileDescriptionInput.value = _jobElement();
-  userProfile.setUserInfo();
+  userProfile.setUserInfo(inputValues);
 }
 function handleAddCardFormSubmit({ name, link }) {
   const card = renderCard({ name, link }, cardListEl);
@@ -76,9 +67,8 @@ function handleAddCardFormSubmit({ name, link }) {
 profileEditButton.addEventListener("click", () => {
   profilePopup.open();
   const userData = userProfile.getUserInfo();
-  profileTitleInput.value = _nameElement();
-  profileDescriptionInput.value = _jobElement();
-  userProfile.getUserInfo(userData);
+  profileTitleInput.value = userData.name;
+  profileDescriptionInput.value = userData.job;
 });
 
 /* Add new card */
