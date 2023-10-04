@@ -73,9 +73,10 @@ function handleAddCardFormSubmit({ name, link }) {
 /* Form Listeners */
 profileEditButton.addEventListener("click", () => {
   profilePopup.open();
-  profileTitleInput.value = profileTitle.textContent;
-  profileDescriptionInput.value = profileDescription.textContent;
-  userProfile.getUserInfo();
+  const userData = userProfile.getUserInfo();
+  profileTitleInput.value = _nameElement();
+  profileDescriptionInput.value = _jobElement();
+  userProfile.getUserInfo(userData);
 });
 
 /* Add new card */
