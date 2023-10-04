@@ -63,11 +63,9 @@ function handleProfileEditSubmit(inputValues) {
   profileTitle.textContent = profileTitleInput.value;
   profileDescription.textContent = profileDescriptionInput.value;
 }
-function handleAddCardFormSubmit(inputValues) {
-  console.log(inputValues);
-  const name = cardTitleInput.value;
-  const link = cardUrlInput.value;
-  renderCard({ name, link }, cardListEl);
+function handleAddCardFormSubmit({ name, link }) {
+  const card = renderCard({ name, link }, cardListEl);
+  cardList.addItem(card);
   addCardForm.reset();
 }
 
