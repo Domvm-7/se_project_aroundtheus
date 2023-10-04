@@ -67,7 +67,6 @@ function handleProfileEditSubmit(inputValues) {
 function handleAddCardFormSubmit({ name, link }) {
   const card = renderCard({ name, link }, cardListEl);
   cardList.addItem(card);
-  addCardForm.reset();
   addCardFormValidator.resetValidation();
 }
 
