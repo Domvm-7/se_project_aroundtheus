@@ -45,7 +45,10 @@ profileEditButton.addEventListener("click", () => {
 });
 
 /* Add new card */
-addNewCardButton.addEventListener("click", () => cardPopup.open());
+addNewCardButton.addEventListener("click", () => {
+  addCardFormValidator.resetValidation();
+  cardPopup.open();
+});
 
 const profileEditFormValidator = new FormValidator(settings, profileEditForm);
 const addCardFormValidator = new FormValidator(settings, addCardForm);
