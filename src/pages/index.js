@@ -112,19 +112,21 @@ const imagePopup = new PopupWithImage("#image-popup");
 imagePopup.setEventListeners();
 
 /* For Each Loop */
-initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
+
+//initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
 
 /* Section */
-const section = new Section(
+const cardList = new Section(
   {
     items: initialCards,
     renderer: (item) => {
-      const cardData = renderCard(item);
-      section.addItem(cardData);
+      cardList.addItem(item);
     },
   },
-  ".card__list"
+  ".cards__list"
 );
+
+cardList.renderItems();
 
 function renderCard(cardData, wrapper) {
   const card = new Card(cardData, "#card-template", handleImageClick);
