@@ -58,7 +58,6 @@ const cardUrlInput = addCardForm.querySelector("#card-url-input");
 function handleImageClick(cardData) {
   imagePopup.open(cardData);
 }
-
 function handleProfileEditSubmit(inputValues) {
   console.log(inputValues);
   profileTitle.textContent = profileTitleInput.value;
@@ -111,10 +110,6 @@ cardPopup.setEventListeners();
 const imagePopup = new PopupWithImage("#image-popup");
 imagePopup.setEventListeners();
 
-/* For Each Loop */
-
-//initialCards.forEach((cardData) => renderCard(cardData, cardListEl));
-
 /* Section */
 const cardList = new Section(
   {
@@ -132,7 +127,6 @@ cardList.renderItems();
 function renderCard(cardData) {
   const card = new Card(cardData, "#card-template", handleImageClick);
   return card.getView();
-  // wrapper.prepend(card.getView());
 }
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
