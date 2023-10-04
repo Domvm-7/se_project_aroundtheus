@@ -4,7 +4,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
-import { initialCards, settings } from "../pages/constants.js";
+import { initialCards, settings } from "../../utils/constants.js";
 import "../pages/index.css";
 
 /* Wrappers */
