@@ -60,7 +60,6 @@ function handleProfileEditSubmit(inputValues) {
 function handleAddCardFormSubmit({ name, link }) {
   const card = renderCard({ name, link }, cardListEl);
   cardList.addItem(card);
-  addCardFormValidator.resetValidation();
 }
 
 /* Form Listeners */
@@ -88,7 +87,7 @@ const profileEditFormValidator = new FormValidator(settings, profileEditForm);
 const addCardFormValidator = new FormValidator(settings, addCardForm);
 
 profileEditFormValidator.enableValidation();
-addCardFormValidator.resetValidation();
+// addCardFormValidator.resetValidation();
 addCardFormValidator.enableValidation();
 
 /* Popup With*/
