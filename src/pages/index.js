@@ -92,7 +92,7 @@ function renderCard(cardData) {
 const userProfile = new UserInfo(".profile__title", ".profile__description");
 
 /* Api */
-fetch("https://around-api.en.tripleten-services.com/v1", {
+fetch("https://around-api.en.tripleten-services.com/v1/cards", {
   headers: {
     authorization: "c56e30dc-2883-4270-a59e-b2f7bae969c6",
   },

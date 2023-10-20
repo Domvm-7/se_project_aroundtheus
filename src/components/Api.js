@@ -4,7 +4,7 @@ class Api {
   }
 
   getInitialCards() {
-    return fetch("https://around-api.en.tripleten-services.com/v1", {
+    return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
       headers: {
         authorization: "c56e30dc-2883-4270-a59e-b2f7bae969c6",
       },
