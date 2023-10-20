@@ -4,7 +4,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
-import { initialCards, settings } from "../../utils/constants.js";
+import { initialCards, settings } from "../../utils/utils.js";
 import "../pages/index.css";
 
 /* Wrappers */
@@ -94,7 +94,7 @@ const userProfile = new UserInfo(".profile__title", ".profile__description");
 /* Api */
 fetch("https://around-api.en.tripleten-services.com/v1", {
   headers: {
-    authorization: "d6a46cc8-712a-4368-828e-3618b1981663",
+    authorization: "c56e30dc-2883-4270-a59e-b2f7bae969c6",
   },
 })
   .then((res) => res.json())
