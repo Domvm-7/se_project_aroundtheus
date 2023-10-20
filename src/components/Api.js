@@ -16,6 +16,7 @@ class Api {
       return Promise.reject(`Error: ${res.status}`);
     });
   }
+
   // other methods for working with the API
 }
 
