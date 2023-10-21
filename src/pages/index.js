@@ -94,7 +94,7 @@ const userProfile = new UserInfo(".profile__title", ".profile__description");
 /* Api */
 fetch("https://around-api.en.tripleten-services.com/v1/cards", {
   headers: {
-    authorization: "c56e30dc-2883-4270-a59e-b2f7bae969c6",
+    authorization: "96c6ff05-502a-4b51-8415-98a1a2f3b371",
   },
 })
   .then((res) => res.json())
