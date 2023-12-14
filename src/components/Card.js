@@ -17,12 +17,29 @@ export default class Card {
     this._cardImageEl.addEventListener("click", () =>
       this._handleImageClick({ name: this._name, link: this._link })
     );
+    this._trashButton.addEventListener("click", () => {
+      const popup = document.getElementById("trash_button");
+      popup.classList.add("popup__active");
+    });
   }
+
   _handleLikeButtonClick = () => {
     this._likeButton.classList.toggle("card__like-button_active");
   };
 
   _handleTrashButtonClick = () => {
+    const popup = document.getElementById("trash_button");
+    popup.classList.add("popup__active");
+
+    const form = popup.querySelector(".popup__form");
+    form.addEventListener("submit", this._handleFormSubmit); // Add event listener for form submission
+    this._cardElement.remove();
+  };
+
+  _handleFormSubmit = (event) => {
+    event.preventDefault();
+    const popup = document.getElementById("trash_button");
+    popup.classList.remove("popup__active");
     this._cardElement.remove();
   };
 
