@@ -1,10 +1,16 @@
 export default class Card {
-  constructor({ name, link }, cardSelector, handleImageClick) {
+  constructor(
+    { name, link },
+    cardSelector,
+    handleImageClick,
+    handleDeleteClick
+  ) {
     this._name = name;
     this._link = link;
     this._cardSelector = cardSelector;
     this._cardElement = null;
     this._handleImageClick = handleImageClick;
+    this._handleDeleteClick = handleDeleteClick;
   }
 
   _setEventListeners() {
@@ -18,8 +24,7 @@ export default class Card {
       this._handleImageClick({ name: this._name, link: this._link })
     );
     this._trashButton.addEventListener("click", () => {
-      const popup = document.getElementById("trash_button");
-      popup.classList.add("popup__active");
+      this.handleDeleteClick();
     });
   }
 

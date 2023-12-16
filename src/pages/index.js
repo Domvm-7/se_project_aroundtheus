@@ -67,6 +67,9 @@ profilePopup.setEventListeners();
 const cardPopup = new PopupWithForm("#add-card-popup", handleAddCardFormSubmit);
 cardPopup.setEventListeners();
 
+const deletePopup = new PopupWithForm("#trash-popup");
+deletePopup.setEventListeners();
+
 const imagePopup = new PopupWithImage("#image-popup");
 imagePopup.setEventListeners();
 
@@ -85,8 +88,17 @@ const cardList = new Section(
 cardList.renderItems();
 
 function renderCard(cardData) {
-  const card = new Card(cardData, "#card-template", handleImageClick);
+  const card = new Card(
+    cardData,
+    "#card-template",
+    handleImageClick,
+    handleDeleteClick
+  );
   return card.getView();
+}
+
+function handleDeleteClick() {
+  deletePopup.open();
 }
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
