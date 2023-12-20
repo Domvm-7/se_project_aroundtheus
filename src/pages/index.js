@@ -6,6 +6,7 @@ import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards, settings } from "../../utils/utils.js";
 import "../pages/index.css";
+import PopupWithFormSubmit from "../components/PopupWithFormSubmit.js";
 
 /* Wrappers */
 const cardListEl = document.querySelector(".cards__list");
