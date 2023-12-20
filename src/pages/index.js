@@ -36,9 +36,7 @@ function handleAddCardFormSubmit({ name, link }) {
   const card = renderCard({ name, link }, cardListEl);
   cardList.addItem(card);
 }
-function handleFormSubmit() {
-  deleteCard.close();
-}
+function handleFormSubmit() {}
 
 /* Form Listeners */
 profileEditButton.addEventListener("click", () => {
