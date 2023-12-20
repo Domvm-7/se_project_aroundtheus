@@ -33,11 +33,6 @@ export default class Card {
   };
 
   _handleTrashButtonClick = () => {
-    const popup = document.getElementById("trash_button");
-    popup.classList.add("popup__active");
-
-    const form = popup.querySelector(".popup__form");
-    form.addEventListener("submit", this._handleFormSubmit); // Add event listener for form submission
     this._cardElement.remove();
   };
 

@@ -115,7 +115,5 @@ fetch("https://around-api.en.tripleten-services.com/v1/cards", {
 function handleDeleteClick(card) {
   deleteCard.open();
 
-  deleteCard.setSubmitAction(() => {
-    deleteCard(card);
-  });
+  deleteCard.setSubmitAction(() => {});
 }
