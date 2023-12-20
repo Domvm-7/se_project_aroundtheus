@@ -113,3 +113,12 @@ fetch("https://around-api.en.tripleten-services.com/v1/cards", {
   .then((result) => {
     console.log(result);
   });
+
+/* Popup With Confirmation */
+function handleDeleteClick(card) {
+  trashPopup.open();
+
+  trashPopup.setSubmitAction(() => {
+    deleteCard(card.id);
+  });
+}
