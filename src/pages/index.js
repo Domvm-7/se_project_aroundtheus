@@ -1,12 +1,12 @@
 import Card from "../components/Card.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithFormSubmit from "../components/PopupWithFormSubmit.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import Section from "../components/Section.js";
 import UserInfo from "../components/UserInfo.js";
 import { initialCards, settings } from "../../utils/utils.js";
 import "../pages/index.css";
-import PopupWithFormSubmit from "../components/PopupWithFormSubmit.js";
 
 /* Wrappers */
 const cardListEl = document.querySelector(".cards__list");
@@ -68,8 +68,8 @@ profilePopup.setEventListeners();
 const cardPopup = new PopupWithForm("#add-card-popup", handleAddCardFormSubmit);
 cardPopup.setEventListeners();
 
-const deletePopup = new PopupWithForm("#trash-popup");
-deletePopup.setEventListeners();
+const deleteCard = new PopupWithForm("#trash-popup");
+deleteCard.setEventListeners();
 
 const imagePopup = new PopupWithImage("#image-popup");
 imagePopup.setEventListeners();
@@ -113,9 +113,9 @@ fetch("https://around-api.en.tripleten-services.com/v1/cards", {
 
 /* Popup With Confirmation */
 function handleDeleteClick(card) {
-  deletePopup.open();
+  deleteCard.open();
 
-  deletePopup.setSubmitAction(() => {
+  deleteCard.setSubmitAction(() => {
     deleteCard(card);
   });
 }
