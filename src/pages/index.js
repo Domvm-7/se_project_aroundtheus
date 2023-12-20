@@ -97,10 +97,6 @@ function renderCard(cardData) {
   return card.getView();
 }
 
-function handleDeleteClick() {
-  deletePopup.open();
-}
-
 const userProfile = new UserInfo(".profile__title", ".profile__description");
 
 /* Api */
@@ -116,9 +112,9 @@ fetch("https://around-api.en.tripleten-services.com/v1/cards", {
 
 /* Popup With Confirmation */
 function handleDeleteClick(card) {
-  trashPopup.open();
+  deletePopup.open();
 
-  trashPopup.setSubmitAction(() => {
-    deleteCard(card.id);
+  deletePopup.setSubmitAction(() => {
+    deleteCard(card);
   });
 }
