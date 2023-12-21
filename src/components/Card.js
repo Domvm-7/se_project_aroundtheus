@@ -19,21 +19,16 @@ export default class Card {
     this._cardImageEl = this._cardElement.querySelector(".card__image");
 
     this._likeButton.addEventListener("click", this._handleLikeButtonClick);
-    this._trashButton.addEventListener("click", this._handleTrashButtonClick);
     this._cardImageEl.addEventListener("click", () =>
       this._handleImageClick({ name: this._name, link: this._link })
     );
     this._trashButton.addEventListener("click", () => {
-      this._handleDeleteClick();
+      this._handleDeleteClick(this);
     });
   }
 
   _handleLikeButtonClick = () => {
     this._likeButton.classList.toggle("card__like-button_active");
-  };
-
-  _handleTrashButtonClick = () => {
-    this._cardElement.remove();
   };
 
   _handleFormSubmit = (event) => {

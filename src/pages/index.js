@@ -69,7 +69,7 @@ profilePopup.setEventListeners();
 const cardPopup = new PopupWithForm("#add-card-popup", handleAddCardFormSubmit);
 cardPopup.setEventListeners();
 
-const deleteCard = new PopupWithForm("#trash-popup");
+const deleteCard = new PopupWithFormSubmit("#trash-popup");
 deleteCard.setEventListeners();
 
 const imagePopup = new PopupWithImage("#image-popup");
@@ -117,5 +117,7 @@ fetch("https://around-api.en.tripleten-services.com/v1/cards", {
 function handleDeleteClick(card) {
   deleteCard.open();
 
-  deleteCard.setSubmitAction(() => {});
+  deleteCard.setSubmitAction(() => {
+    console.log(card);
+  });
 }
