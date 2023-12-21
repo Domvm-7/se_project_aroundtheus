@@ -118,6 +118,7 @@ function handleDeleteClick(card) {
   deleteCard.open();
 
   deleteCard.setSubmitAction(() => {
+    deleteCard.close();
     console.log(card);
   });
 }
