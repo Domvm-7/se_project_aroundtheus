@@ -20,6 +20,26 @@ class Api {
       });
   }
 
+  getUserInfo() {
+    return fetch(this.url + `${"/users/me"}`, {
+      headers: {
+        authorization: this.authorization,
+      },
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.satus}`);
+      })
+      .then((res) => {
+        return res.name;
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
   // other methods for working with the API
 }
 
