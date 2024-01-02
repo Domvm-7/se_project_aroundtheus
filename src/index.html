@@ -134,6 +134,25 @@
         </div>
     </div>
 
+    <!-- Edit Avatar Popup -->
+    <div class="popup" id="profile-edit-popup">
+      <div class="popup__container">
+        <form class="popup__form">
+          <button class="popup__close" type="button"></button>
+          <h2 class="popup__heading">Change Profile Picture</h2>
+          <input 
+          class="popup__input" 
+          name="avatar" 
+          id="profile-avatar-input-url" 
+          placeholder="url" 
+          minlength="2" 
+          maxlength="400" 
+          required/>
+          <span class="popup__error" id="profile-avatar-input-url-error"></span>
+          <button class="popup__button popup__button_disabled"
+          type="submit"
+          disabled>Save</button>
+  
     <template id="card-template">
       <li class="card">
         <img class="card__image" src="#" alt="#" />
