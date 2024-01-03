@@ -76,6 +76,10 @@
   margin-right: 24px;
 }
 
+.profile__image:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 775px) {
   .profile__edit-button {
     margin-right: 34px;
