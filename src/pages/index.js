@@ -25,6 +25,11 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 
+const profileImage = document.querySelector(".profile__image");
+profileImage.addEventListener("click", () => {
+  avatarPopup.open();
+});
+
 /* Funtions */
 function handleImageClick(cardData) {
   imagePopup.open(cardData);
@@ -75,6 +80,12 @@ deleteCard.setEventListeners();
 const imagePopup = new PopupWithImage("#image-popup");
 imagePopup.setEventListeners();
 
+const avatarPopup = new PopupWithFormSubmit(
+  "#avatar-edit-popup",
+  handleAvatarClick
+);
+avatarPopup.setEventListeners();
+
 /* Section */
 const cardList = new Section(
   {
@@ -113,7 +124,7 @@ fetch("https://around-api.en.tripleten-services.com/v1/cards", {
     console.log(result);
   });
 
-/* Popup With Confirmation */
+/* Popup With Form Submit */
 function handleDeleteClick(card) {
   deleteCard.open();
 
@@ -122,4 +133,8 @@ function handleDeleteClick(card) {
     deleteCard.close();
     console.log(card);
   });
+}
+
+function handleAvatarClick() {
+  avatarPopup.open();
 }
