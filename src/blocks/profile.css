@@ -77,7 +77,8 @@
 }
 
 .profile__image:hover {
-  background: visible url(../images/avatar-edit.svg) center no-repeat;
+  background-image: url("/src/images/avatar-edit.svg");
+  background-size: cover;
   cursor: pointer;
 }
 
