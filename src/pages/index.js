@@ -31,9 +31,21 @@ profileImage.addEventListener("click", () => {
   avatarPopup.open();
 });
 
+let cardList;
 api.getInitialCards().then((res) => {
   //handle the Initial Cards response
   console.log(res);
+  const cardList = new Section(
+    {
+      items: res,
+      renderer: (item) => {
+        const cardElement = renderCard(item);
+        cardList.addItem(cardElement);
+      },
+    },
+    ".cards__list"
+  );
+  cardList.renderItems();
 });
 
 /* Funtions */
@@ -93,18 +105,18 @@ const avatarPopup = new PopupWithFormSubmit(
 avatarPopup.setEventListeners();
 
 /* Section */
-const cardList = new Section(
-  {
-    items: initialCards,
-    renderer: (item) => {
-      const cardElement = renderCard(item);
-      cardList.addItem(cardElement);
-    },
-  },
-  ".cards__list"
-);
+// const cardList = new Section(
+//   {
+//     items: initialCards,
+//     renderer: (item) => {
+//       const cardElement = renderCard(item);
+//       cardList.addItem(cardElement);
+//     },
+//   },
+//   ".cards__list"
+// );
 
-cardList.renderItems();
+// cardList.renderItems();
 
 function renderCard(cardData) {
   const card = new Card(
