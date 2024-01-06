@@ -1,4 +1,5 @@
 import Card from "../components/Card.js";
+import { api } from "../components/Api.js";
 import FormValidator from "../components/FormValidator.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import PopupWithFormSubmit from "../components/PopupWithFormSubmit.js";
@@ -28,6 +29,11 @@ const profileDescriptionInput = document.querySelector(
 const profileImage = document.querySelector(".profile__image");
 profileImage.addEventListener("click", () => {
   avatarPopup.open();
+});
+
+api.getInitialCards().then((res) => {
+  //handle the Initial Cards response
+  console.log(res);
 });
 
 /* Funtions */
@@ -114,15 +120,15 @@ function renderCard(cardData) {
 const userProfile = new UserInfo(".profile__title", ".profile__description");
 
 /* Api */
-fetch("https://around-api.en.tripleten-services.com/v1/cards", {
-  headers: {
-    authorization: "96c6ff05-502a-4b51-8415-98a1a2f3b371",
-  },
-})
-  .then((res) => res.json())
-  .then((result) => {
-    console.log(result);
-  });
+// fetch("https://around-api.en.tripleten-services.com/v1/cards", {
+//   headers: {
+//     authorization: "96c6ff05-502a-4b51-8415-98a1a2f3b371",
+//   },
+// })
+//   .then((res) => res.json())
+//   .then((result) => {
+//     console.log(result);
+//   });
 
 /* Popup With Form Submit */
 function handleDeleteClick(card) {
