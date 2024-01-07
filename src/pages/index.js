@@ -32,11 +32,11 @@ profileImage.addEventListener("click", () => {
 });
 
 let cardList;
-api.getInitialCards().then((res) => {
-  console.log(res);
-  const cardList = new Section(
+api.getInitialCards().then((initialCards) => {
+  console.log(initialCards);
+  cardList = new Section(
     {
-      items: res,
+      items: initialCards,
       renderer: (item) => {
         const cardElement = renderCard(item);
         cardList.addItem(cardElement);
