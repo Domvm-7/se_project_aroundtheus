@@ -13,7 +13,7 @@ class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.all(`Error: ${res.status}`);
       })
       .catch((err) => {
         console.error(err);
@@ -31,9 +31,6 @@ class Api {
           return res.json();
         }
         return Promise.reject(`Error: ${res.status}`);
-      })
-      .then((res) => {
-        return res.name;
       })
       .catch((err) => {
         console.error(err);
