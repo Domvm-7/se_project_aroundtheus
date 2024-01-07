@@ -21,16 +21,16 @@ class Api {
   }
 
   getUserInfo() {
-    return fetch(this.url + `${"/users/me"}`, {
+    return fetch(this.options.baseUrl + "/users/me", {
       headers: {
-        authorization: this.authorization,
+        authorization: this.options.headers.authorization,
       },
     })
       .then((res) => {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.satus}`);
+        return Promise.reject(`Error: ${res.status}`);
       })
       .then((res) => {
         return res.name;
