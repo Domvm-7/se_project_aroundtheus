@@ -52,7 +52,7 @@ api.getInitialCards().then((initialCards) => {
     if (userInfo) {
       userProfile.setUserInfo({
         name: userInfo.name,
-        job: userInfo.job,
+        job: userInfo.about,
       });
     } else {
       console.error("Invalid user information received");
