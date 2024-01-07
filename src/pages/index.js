@@ -46,6 +46,19 @@ api.getInitialCards().then((res) => {
     ".cards__list"
   );
   cardList.renderItems();
+
+  api.getUserInfo().then((userInfo) => {
+    console.log(userInfo);
+
+    if (userInfo) {
+      userProfile.setUserInfo({
+        name: userInfo.name,
+        job: userInfo.job,
+      });
+    } else {
+      console.error("Invalid user information received");
+    }
+  });
 });
 
 /* Funtions */
