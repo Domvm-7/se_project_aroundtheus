@@ -33,7 +33,6 @@ profileImage.addEventListener("click", () => {
 
 let cardList;
 api.getInitialCards().then((res) => {
-  //handle the Initial Cards response
   console.log(res);
   const cardList = new Section(
     {
@@ -117,20 +116,6 @@ const avatarPopup = new PopupWithFormSubmit(
 );
 avatarPopup.setEventListeners();
 
-/* Section */
-// const cardList = new Section(
-//   {
-//     items: initialCards,
-//     renderer: (item) => {
-//       const cardElement = renderCard(item);
-//       cardList.addItem(cardElement);
-//     },
-//   },
-//   ".cards__list"
-// );
-
-// cardList.renderItems();
-
 function renderCard(cardData) {
   const card = new Card(
     cardData,
@@ -143,17 +128,6 @@ function renderCard(cardData) {
 }
 
 const userProfile = new UserInfo(".profile__title", ".profile__description");
-
-/* Api */
-// fetch("https://around-api.en.tripleten-services.com/v1/cards", {
-//   headers: {
-//     authorization: "96c6ff05-502a-4b51-8415-98a1a2f3b371",
-//   },
-// })
-//   .then((res) => res.json())
-//   .then((result) => {
-//     console.log(result);
-//   });
 
 /* Popup With Form Submit */
 function handleDeleteClick(card) {
