@@ -37,6 +37,26 @@ class Api {
       });
   }
 
+  updateUserProfile(data) {
+    return fetch(this.options.baseUrl + "/users/me", {
+      method: "PATCH",
+      headers: {
+        authorization: this.options.headers.authorization,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return res.json().then((data) => Promise.reject(data));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
   // other methods for working with the API
 }
 

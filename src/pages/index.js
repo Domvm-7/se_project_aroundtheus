@@ -26,6 +26,15 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 
+const userProfile = new UserInfo(".profile__title", ".profile__description");
+
+const inputValues = {
+  name: profileTitleInput.value,
+  job: profileDescriptionInput.value,
+};
+
+handleProfileEditSubmit(inputValues);
+
 const profileImage = document.querySelector(".profile__image");
 profileImage.addEventListener("click", () => {
   avatarPopup.open();
@@ -59,6 +68,15 @@ api.getInitialCards().then((initialCards) => {
     }
   });
 });
+
+api
+  .updateUserProfile(inputValues)
+  .then((updatedUserInfo) => {
+    console.log("User profile updated successfully:", updatedUserInfo);
+  })
+  .catch((error) => {
+    console.error("Error updating user profile:", error);
+  });
 
 /* Funtions */
 function handleImageClick(cardData) {
@@ -127,7 +145,7 @@ function renderCard(cardData) {
   return card.getView();
 }
 
-const userProfile = new UserInfo(".profile__title", ".profile__description");
+// const userProfile = new UserInfo(".profile__title", ".profile__description");
 
 /* Popup With Form Submit */
 function handleDeleteClick(card) {
