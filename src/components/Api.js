@@ -38,6 +38,7 @@ class Api {
   }
 
   updateUserProfile(data) {
+    console.log("data", data);
     return fetch(this.options.baseUrl + "/users/me", {
       method: "PATCH",
       headers: {

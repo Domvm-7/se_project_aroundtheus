@@ -34,6 +34,8 @@ const inputValues = {
   job: profileDescriptionInput.value,
 };
 
+console.log("inputValues", inputValues);
+
 handleProfileEditSubmit(inputValues);
 
 const profileImage = document.querySelector(".profile__image");
@@ -145,8 +147,6 @@ function renderCard(cardData) {
   );
   return card.getView();
 }
-
-// const userProfile = new UserInfo(".profile__title", ".profile__description");
 
 /* Popup With Form Submit */
 function handleDeleteClick(card) {
