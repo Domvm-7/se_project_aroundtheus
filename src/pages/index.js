@@ -26,6 +26,7 @@ const profileDescriptionInput = document.querySelector(
   "#profile-description-input"
 );
 
+/* Api Endpoints */
 const userProfile = new UserInfo(".profile__title", ".profile__description");
 
 const inputValues = {
