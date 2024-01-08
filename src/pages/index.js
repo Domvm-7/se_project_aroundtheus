@@ -72,15 +72,6 @@ api.getInitialCards().then((initialCards) => {
   });
 });
 
-api
-  .updateUserProfile(inputValues)
-  .then((updatedUserInfo) => {
-    console.log("User profile updated successfully:", updatedUserInfo);
-  })
-  .catch((error) => {
-    console.error("Error updating user profile:", error);
-  });
-
 /* Funtions */
 function handleImageClick(cardData) {
   imagePopup.open(cardData);
@@ -91,6 +82,15 @@ function handleProfileEditSubmit(inputValues) {
 function handleAddCardFormSubmit({ name, link }) {
   const card = renderCard({ name, link }, cardListEl);
   cardList.addItem(card);
+
+  api
+    .updateUserProfile(inputValues)
+    .then((updatedUserInfo) => {
+      console.log("User profile updated successfully:", updatedUserInfo);
+    })
+    .catch((error) => {
+      console.error("Error updating user profile:", error);
+    });
 }
 function handleFormSubmit() {}
 
