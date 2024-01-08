@@ -111,9 +111,10 @@ function handleProfileEditSubmit(inputValues) {
     });
 }
 
-function handleAvatarSubmit({ avatarUrl }) {
+function handleAvatarSubmit({ avatar }) {
+  debugger;
   api
-    .updateAvatar({ avatar: avatarUrl })
+    .updateAvatar({ avatar: avatar })
     .then((updatedUserInfo) => {
       console.log("Avatar updated successfully:", updatedUserInfo);
     })
