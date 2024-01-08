@@ -28,42 +28,32 @@ const profileDescriptionInput = document.querySelector(
 const userProfile = new UserInfo(".profile__title", ".profile__description");
 
 /* Form Validators */
-const profileEditFormValidator = new FormValidator(
-  settings,
-  profileEditPopup.querySelector(".popup__form")
-);
-const addCardFormValidator = new FormValidator(
-  settings,
-  addCardPopup.querySelector(".popup__form")
-);
+const profileEditForm = profileEditPopup.querySelector(".popup__form");
+const addCardForm = addCardPopup.querySelector(".popup__form");
+
+const profileEditFormValidator = new FormValidator(settings, profileEditForm);
+const addCardFormValidator = new FormValidator(settings, addCardForm);
 
 profileEditFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
 
-/* Popup With Form Submit */
+/* Popup Instances */
 const deleteCard = new PopupWithFormSubmit("#trash-popup");
-deleteCard.setEventListeners();
-
-/* Popup With Image */
 const imagePopup = new PopupWithImage("#image-popup");
-imagePopup.setEventListeners();
-
-/* Popup With Form Submit for Avatar */
 const avatarPopup = new PopupWithFormSubmit(
   "#avatar-edit-popup",
   handleAvatarSubmit
 );
-avatarPopup.setEventListeners();
-
-/* Popup With Form for Profile Edit */
 const profilePopup = new PopupWithForm(
   "#profile-edit-popup",
   handleProfileEditSubmit
 );
-profilePopup.setEventListeners();
-
-/* Popup With Form for Add Card */
 const cardPopup = new PopupWithForm("#add-card-popup", handleAddCardFormSubmit);
+
+deleteCard.setEventListeners();
+imagePopup.setEventListeners();
+avatarPopup.setEventListeners();
+profilePopup.setEventListeners();
 cardPopup.setEventListeners();
 
 /* Get Initial Cards */
