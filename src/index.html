@@ -124,14 +124,15 @@
       </div>
     </div>
 
-     <!-- Trash Button Popup -->
-     <div class="popup" id="trash-popup">
+    <!-- Trash Button Popup -->
+    <div class="popup" id="trash-popup">
       <div class="popup__container-trash">
         <form class="popup__form">
           <button class="popup__close" type="button"></button>
           <h2 class="popup__heading-trash">Are you sure?</h2>
           <button class="popup__button" type="submit">Yes</button>
-        </div>
+        </form>
+      </div>
     </div>
 
     <!-- Edit Avatar Popup -->
@@ -140,18 +141,23 @@
         <form class="popup__form">
           <button class="popup__close" type="button"></button>
           <h2 class="popup__heading">Change Profile Picture</h2>
-          <input 
-          class="popup__input" 
-          name="avatar" 
-          id="profile-avatar-input-url" 
-          placeholder="url" 
-          minlength="2" 
-          maxlength="400" 
-          required/>
+          <input
+            class="popup__input"
+            name="avatar"
+            id="profile-avatar-input-url"
+            placeholder="url"
+            minlength="2"
+            maxlength="400"
+            required
+          />
           <span class="popup__error" id="profile-avatar-input-url-error"></span>
-          <button class="popup__button popup__button_disabled"
-          type="submit">Save</button>
-  
+          <button class="popup__button popup__button_disabled" type="submit">
+            Save
+          </button>
+        </form>
+      </div>
+    </div>
+
     <template id="card-template">
       <li class="card">
         <img class="card__image" src="#" alt="#" />

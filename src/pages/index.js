@@ -40,10 +40,7 @@ addCardFormValidator.enableValidation();
 /* Popup Instances */
 const deleteCard = new PopupWithFormSubmit("#trash-popup");
 const imagePopup = new PopupWithImage("#image-popup");
-const avatarPopup = new PopupWithFormSubmit(
-  "#avatar-edit-popup",
-  handleAvatarSubmit
-);
+const avatarPopup = new PopupWithForm("#avatar-edit-popup", handleAvatarSubmit);
 const profilePopup = new PopupWithForm(
   "#profile-edit-popup",
   handleProfileEditSubmit
@@ -106,6 +103,8 @@ function handleProfileEditSubmit(inputValues) {
   api
     .updateUserProfile(updatedData)
     .then((updatedUserInfo) => {
+      debugger;
+      userProfile.setUserInfo(updatedUserInfo);
       console.log("User profile updated successfully:", updatedUserInfo);
     })
     .catch((error) => {
