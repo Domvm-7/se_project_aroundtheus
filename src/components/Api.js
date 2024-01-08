@@ -3,43 +3,6 @@ class Api {
     this.options = options;
   }
 
-  getInitialCards() {
-    return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
-      headers: {
-        authorization: "96c6ff05-502a-4b51-8415-98a1a2f3b371",
-      },
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return Promise.all(`Error: ${res.status}`);
-      })
-      .catch((err) => {
-        console.error(`Error: ${err.message}\nURL: ${err.url}`);
-      });
-  }
-
-  createCard(data) {
-    return fetch(this.options.baseUrl + "/cards", {
-      method: "POST",
-      headers: {
-        authorization: this.options.headers.authorization,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((res) => {
-        if (res.ok) {
-          return res.json();
-        }
-        return res.json().then((data) => Promise.all(data));
-      })
-      .catch((err) => {
-        console.error(`Error: ${err.message}\nURL: ${err.url}`);
-      });
-  }
-
   getUserInfo() {
     return fetch(this.options.baseUrl + "/users/me", {
       headers: {
@@ -50,7 +13,7 @@ class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.all(`Error: ${res.status}`);
+        return Promise.reject(`Error: ${res.status}`);
       })
       .catch((err) => {
         console.error(`Error: ${err.message}\nURL: ${err.url}`);
@@ -71,7 +34,7 @@ class Api {
         if (res.ok) {
           return res.json();
         }
-        return res.json().then((data) => Promise.all(data));
+        return res.json().then((data) => Promise.reject(data));
       })
       .catch((err) => {
         console.error(`Error: ${err.message}\nURL: ${err.url}`);
@@ -92,7 +55,44 @@ class Api {
         if (res.ok) {
           return res.json();
         }
-        return res.json().then((data) => Promise.all(data));
+        return res.json().then((data) => Promise.reject(data));
+      })
+      .catch((err) => {
+        console.error(`Error: ${err.message}\nURL: ${err.url}`);
+      });
+  }
+
+  getInitialCards() {
+    return fetch("https://around-api.en.tripleten-services.com/v1/cards", {
+      headers: {
+        authorization: "96c6ff05-502a-4b51-8415-98a1a2f3b371",
+      },
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return Promise.reject(`Error: ${res.status}`);
+      })
+      .catch((err) => {
+        console.error(`Error: ${err.message}\nURL: ${err.url}`);
+      });
+  }
+
+  createCard(data) {
+    return fetch(this.options.baseUrl + "/cards", {
+      method: "POST",
+      headers: {
+        authorization: this.options.headers.authorization,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return res.json().then((data) => Promise.reject(data));
       })
       .catch((err) => {
         console.error(`Error: ${err.message}\nURL: ${err.url}`);
