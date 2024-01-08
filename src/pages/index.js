@@ -43,6 +43,21 @@ profileImage.addEventListener("click", () => {
   avatarPopup.open();
 });
 
+function handleAvatarClick() {
+  avatarPopup.open();
+}
+
+function handleAvatarSubmit({ avatarUrl }) {
+  api
+    .updateAvatar({ avatar: avatarUrl })
+    .then((updatedUserInfo) => {
+      console.log("Avatar updated successfully:", updatedUserInfo);
+    })
+    .catch((error) => {
+      console.error("Error updating avatar:", error);
+    });
+}
+
 let cardList;
 api.getInitialCards().then((initialCards) => {
   console.log(initialCards);
@@ -133,7 +148,8 @@ imagePopup.setEventListeners();
 
 const avatarPopup = new PopupWithFormSubmit(
   "#avatar-edit-popup",
-  handleAvatarClick
+  handleAvatarClick,
+  handleAvatarSubmit
 );
 avatarPopup.setEventListeners();
 
@@ -157,8 +173,4 @@ function handleDeleteClick(card) {
     deleteCard.close();
     console.log(card);
   });
-}
-
-function handleAvatarClick() {
-  avatarPopup.open();
 }
