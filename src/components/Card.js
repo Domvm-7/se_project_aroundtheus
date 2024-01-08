@@ -1,3 +1,5 @@
+import { api } from "../components/Api.js";
+
 export default class Card {
   constructor(
     { name, link, _id },
@@ -15,8 +17,39 @@ export default class Card {
   }
 
   _handleLikeButtonClick = () => {
-    this._likeButton.classList.toggle("card__like-button_active");
+    const isLiked = this._likeButton.classList.contains(
+      "card__like-button_active"
+    );
+    if (isLiked) {
+      this._handleDislike();
+    } else {
+      this._handleLike();
+    }
   };
+
+  _handleLike() {
+    api
+      .likeCard(this._id)
+      .then((updatedCard) => {
+        console.log("Card liked successfully", updatedCard);
+        this._likeButton.classList.add("card__like-button_active");
+      })
+      .catch((error) => {
+        console.error("Error liking card", error);
+      });
+  }
+
+  _handleDislike() {
+    api
+      .dislikeCard(this._id)
+      .then((updatedCard) => {
+        console.log("Card disliked successfully", updatedCard);
+        this._likeButton.classList.remove("card__like-button_active");
+      })
+      .catch((error) => {
+        console.error("Error disliking card", error);
+      });
+  }
 
   _handleFormSubmit = (event) => {
     event.preventDefault();
@@ -24,19 +57,24 @@ export default class Card {
     popup.classList.remove("popup__active");
     this._cardElement.remove();
   };
-
   _setEventListeners() {
     this._likeButton = this._cardElement.querySelector(".card__like-button");
     this._trashButton = this._cardElement.querySelector(".card__trash-button");
     this._cardImageEl = this._cardElement.querySelector(".card__image");
 
-    this._likeButton.addEventListener("click", this._handleLikeButtonClick);
-    this._cardImageEl.addEventListener("click", () =>
-      this._handleImageClick({ name: this._name, link: this._link })
-    );
-    this._trashButton.addEventListener("click", () =>
-      this._handleDeleteClick(this)
-    );
+    if (this._likeButton && this._trashButton && this._cardImageEl) {
+      this._likeButton.addEventListener("click", this._handleLikeButtonClick);
+      this._cardImageEl.addEventListener("click", () =>
+        this._handleImageClick({ name: this._name, link: this._link })
+      );
+      this._trashButton.addEventListener("click", () =>
+        this._handleDeleteClick(this)
+      );
+    } else {
+      console.error(
+        "Failed to set event listeners. One or more elements are undefined."
+      );
+    }
   }
 
   getView() {

@@ -92,6 +92,30 @@ class Api {
       .catch(this._handleError);
   }
 
+  // Like a card
+  likeCard(cardId) {
+    return fetch(`${this.options.baseUrl}/cards/${cardId}/likes`, {
+      method: "PUT",
+      headers: {
+        authorization: this.options.headers.authorization,
+      },
+    })
+      .then(this._handleResponse)
+      .catch(this._handleError);
+  }
+
+  // Dislike a card
+  dislikeCard(cardId) {
+    return fetch(`${this.options.baseUrl}/cards/${cardId}/likes`, {
+      method: "DELETE",
+      headers: {
+        authorization: this.options.headers.authorization,
+      },
+    })
+      .then(this._handleResponse)
+      .catch(this._handleError);
+  }
+
   // Other methods for working with the API
 }
 
