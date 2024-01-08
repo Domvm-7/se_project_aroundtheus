@@ -98,8 +98,13 @@ function handleImageClick(cardData) {
 }
 
 function handleProfileEditSubmit(inputValues) {
+  const updatedData = {
+    name: inputValues.name,
+    about: inputValues.job,
+  };
+
   api
-    .updateUserProfile(inputValues)
+    .updateUserProfile(updatedData)
     .then((updatedUserInfo) => {
       console.log("User profile updated successfully:", updatedUserInfo);
     })
