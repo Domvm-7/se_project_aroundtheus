@@ -96,18 +96,7 @@ function handleImageClick(cardData) {
 function handleProfileEditSubmit(inputValues) {
   userProfile.setUserInfo(inputValues);
 }
-function handleCardCreateSubmit({ name, link }) {
-  api
-    .createCard({ name, link })
-    .then((createdCard) => {
-      console.log("Card created successfully:", createdCard);
-      const cardElement = renderCard(createdCard);
-      cardList.addItem(cardElement);
-    })
-    .catch((error) => {
-      console.error("Error creating card:", error);
-    });
-}
+
 function handleAddCardFormSubmit({ name, link }) {
   const card = renderCard({ name, link }, cardListEl);
   cardList.addItem(card);
@@ -151,11 +140,7 @@ const profilePopup = new PopupWithForm(
 );
 profilePopup.setEventListeners();
 
-const cardPopup = new PopupWithForm(
-  "#add-card-popup",
-  handleAddCardFormSubmit,
-  handleCardCreateSubmit
-);
+const cardPopup = new PopupWithForm("#add-card-popup", handleAddCardFormSubmit);
 cardPopup.setEventListeners();
 
 const deleteCard = new PopupWithFormSubmit("#trash-popup");
