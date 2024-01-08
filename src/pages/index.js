@@ -75,7 +75,7 @@ api.getInitialCards().then((initialCards) => {
     if (userInfo) {
       userProfile.setUserInfo({
         name: userInfo.name,
-        job: userInfo.about,
+        about: userInfo.about,
       });
     } else {
       console.error("Invalid user information received");
@@ -97,13 +97,12 @@ function handleImageClick(cardData) {
 function handleProfileEditSubmit(inputValues) {
   const updatedData = {
     name: inputValues.name,
-    about: inputValues.job,
+    about: inputValues.about,
   };
 
   api
     .updateUserProfile(updatedData)
     .then((updatedUserInfo) => {
-      debugger;
       userProfile.setUserInfo(updatedUserInfo);
       console.log("User profile updated successfully:", updatedUserInfo);
     })
@@ -148,7 +147,7 @@ profileEditButton.addEventListener("click", () => {
   profilePopup.open();
   const userData = userProfile.getUserInfo();
   profileTitleInput.value = userData.name;
-  profileDescriptionInput.value = userData.job;
+  profileDescriptionInput.value = userData.about;
   profileEditFormValidator.resetValidation();
 });
 
