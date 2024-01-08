@@ -10,8 +10,8 @@ export default class PopupWithFormSubmit extends Popup {
 
     const submitButton = this.popupElement.querySelector(".popup__button");
 
-    submitButton.addEventListener("click", (e) => {
-      e.preventDefault();
+    submitButton.addEventListener("click", ({ preventDefault }) => {
+      preventDefault();
       this._handleFormSubmit();
     });
   }

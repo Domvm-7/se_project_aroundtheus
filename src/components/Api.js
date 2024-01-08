@@ -16,7 +16,7 @@ class Api {
         return Promise.all(`Error: ${res.status}`);
       })
       .catch((err) => {
-        console.error(err);
+        console.error(`Error: ${err.message}\nURL: ${err.url}`);
       });
   }
 
@@ -33,10 +33,10 @@ class Api {
         if (res.ok) {
           return res.json();
         }
-        return res.json().then((data) => Promise.reject(data));
+        return res.json().then((data) => Promise.all(data));
       })
       .catch((err) => {
-        console.error(err);
+        console.error(`Error: ${err.message}\nURL: ${err.url}`);
       });
   }
 
@@ -50,10 +50,10 @@ class Api {
         if (res.ok) {
           return res.json();
         }
-        return Promise.reject(`Error: ${res.status}`);
+        return Promise.all(`Error: ${res.status}`);
       })
       .catch((err) => {
-        console.error(err);
+        console.error(`Error: ${err.message}\nURL: ${err.url}`);
       });
   }
 
@@ -71,10 +71,10 @@ class Api {
         if (res.ok) {
           return res.json();
         }
-        return res.json().then((data) => Promise.reject(data));
+        return res.json().then((data) => Promise.all(data));
       })
       .catch((err) => {
-        console.error(err);
+        console.error(`Error: ${err.message}\nURL: ${err.url}`);
       });
   }
 
@@ -92,10 +92,10 @@ class Api {
         if (res.ok) {
           return res.json();
         }
-        return res.json().then((data) => Promise.reject(data));
+        return res.json().then((data) => Promise.all(data));
       })
       .catch((err) => {
-        console.error(err);
+        console.error(`Error: ${err.message}\nURL: ${err.url}`);
       });
   }
 
