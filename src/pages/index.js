@@ -97,13 +97,12 @@ function handleProfileEditSubmit(inputValues) {
   userProfile.setUserInfo(inputValues);
 }
 function handleCardCreateSubmit({ name, link }) {
-  const card = renderCard({ name, link }, cardListEl);
-  cardList.addItem(card);
-
   api
     .createCard({ name, link })
     .then((createdCard) => {
       console.log("Card created successfully:", createdCard);
+      const cardElement = renderCard(createdCard);
+      cardList.addItem(cardElement);
     })
     .catch((error) => {
       console.error("Error creating card:", error);
@@ -180,7 +179,8 @@ function renderCard(cardData) {
     handleDeleteClick,
     handleFormSubmit
   );
-  return card.getView();
+  const cardElement = card.getView();
+  return cardElement;
 }
 
 /* Popup With Form Submit */
