@@ -45,10 +45,6 @@ profileImage.addEventListener("click", () => {
   avatarPopup.open();
 });
 
-function handleAvatarClick() {
-  avatarPopup.open();
-}
-
 function handleAvatarSubmit({ avatarUrl }) {
   api
     .updateAvatar({ avatar: avatarUrl })
@@ -94,13 +90,6 @@ function handleImageClick(cardData) {
   imagePopup.open(cardData);
 }
 function handleProfileEditSubmit(inputValues) {
-  userProfile.setUserInfo(inputValues);
-}
-
-function handleAddCardFormSubmit({ name, link }) {
-  const card = renderCard({ name, link }, cardListEl);
-  cardList.addItem(card);
-
   api
     .updateUserProfile(inputValues)
     .then((updatedUserInfo) => {
@@ -110,7 +99,14 @@ function handleAddCardFormSubmit({ name, link }) {
       console.error("Error updating user profile:", error);
     });
 }
-function handleFormSubmit() {}
+function handleFormSubmit() {
+  userProfile.setUserInfo(inputValues);
+}
+
+function handleAddCardFormSubmit({ name, link }) {
+  const card = renderCard({ name, link }, cardListEl);
+  cardList.addItem(card);
+}
 
 /* Form Listeners */
 profileEditButton.addEventListener("click", () => {
