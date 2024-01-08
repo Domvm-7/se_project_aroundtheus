@@ -128,8 +128,16 @@ function handleFormSubmit() {
 }
 
 function handleAddCardFormSubmit({ name, link }) {
-  const card = renderCard({ name, link }, cardListEl);
-  cardList.addItem(card);
+  api
+    .createCard({ name, link })
+    .then((createdCard) => {
+      console.log("Card created successfully", createdCard);
+      const cardElement = renderCard(createdCard);
+      cardList.addItem(cardElement);
+    })
+    .catch((error) => {
+      console.error("Error creating card", error);
+    });
 }
 
 function renderCard(cardData) {
