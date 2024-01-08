@@ -20,6 +20,26 @@ class Api {
       });
   }
 
+  createCard(data) {
+    return fetch(this.options.baseUrl + "/cards", {
+      method: "POST",
+      headers: {
+        authorization: this.options.headers.authorization,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+        return res.json().then((data) => Promise.reject(data));
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
   getUserInfo() {
     return fetch(this.options.baseUrl + "/users/me", {
       headers: {
