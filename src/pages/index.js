@@ -31,14 +31,14 @@ const profileDescriptionInput = document.querySelector(
 /* Api Endpoints */
 const userProfile = new UserInfo(".profile__title", ".profile__description");
 
-const inputValues = {
-  name: profileTitleInput.value,
-  job: profileDescriptionInput.value,
-};
+// const inputValues = {
+//   name: profileTitleInput.value,
+//   job: profileDescriptionInput.value,
+// };
 
-console.log("inputValues", inputValues);
+// console.log("inputValues", inputValues);
 
-handleProfileEditSubmit(inputValues);
+// handleProfileEditSubmit(inputValues);
 
 const profileImage = document.querySelector(".profile__image");
 profileImage.addEventListener("click", () => {
@@ -166,7 +166,6 @@ imagePopup.setEventListeners();
 
 const avatarPopup = new PopupWithFormSubmit(
   "#avatar-edit-popup",
-  handleAvatarClick,
   handleAvatarSubmit
 );
 avatarPopup.setEventListeners();
