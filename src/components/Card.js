@@ -13,20 +13,6 @@ export default class Card {
     this._handleDeleteClick = handleDeleteClick;
   }
 
-  _setEventListeners() {
-    this._likeButton = this._cardElement.querySelector(".card__like-button");
-    this._trashButton = this._cardElement.querySelector(".card__trash-button");
-    this._cardImageEl = this._cardElement.querySelector(".card__image");
-
-    this._likeButton.addEventListener("click", this._handleLikeButtonClick);
-    this._cardImageEl.addEventListener("click", () =>
-      this._handleImageClick({ name: this._name, link: this._link })
-    );
-    this._trashButton.addEventListener("click", () => {
-      this._handleDeleteClick(this);
-    });
-  }
-
   _handleLikeButtonClick = () => {
     this._likeButton.classList.toggle("card__like-button_active");
   };
@@ -37,6 +23,20 @@ export default class Card {
     popup.classList.remove("popup__active");
     this._cardElement.remove();
   };
+
+  _setEventListeners() {
+    this._likeButton = this._cardElement.querySelector(".card__like-button");
+    this._trashButton = this._cardElement.querySelector(".card__trash-button");
+    this._cardImageEl = this._cardElement.querySelector(".card__image");
+
+    this._likeButton.addEventListener("click", this._handleLikeButtonClick);
+    this._cardImageEl.addEventListener("click", () =>
+      this._handleImageClick({ name: this._name, link: this._link })
+    );
+    this._trashButton.addEventListener("click", () =>
+      this._handleDeleteClick(this)
+    );
+  }
 
   getView() {
     console.log("Card getView called");
