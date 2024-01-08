@@ -9,6 +9,8 @@ import UserInfo from "../components/UserInfo.js";
 import { initialCards, settings } from "../../utils/utils.js";
 import "../pages/index.css";
 
+console.log("Using initialCards:", initialCards);
+
 /* Wrappers */
 const cardListEl = document.querySelector(".cards__list");
 const profileEditPopup = document.querySelector("#profile-edit-popup");
