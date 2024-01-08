@@ -60,13 +60,13 @@ function handleAvatarSubmit({ avatarUrl }) {
 
 let cardList;
 api.getInitialCards().then((initialCards) => {
-  console.log(initialCards);
+  console.log("initialCards", initialCards);
   cardList = new Section(
     {
       items: initialCards,
-      renderer: (item) => {
+      renderer(item) {
         const cardElement = renderCard(item);
-        cardList.addItem(cardElement);
+        this._container.appendChild(cardElement);
       },
     },
     ".cards__list"

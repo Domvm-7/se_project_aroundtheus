@@ -39,6 +39,7 @@ export default class Card {
   };
 
   getView() {
+    console.log("Card getView called");
     const cardTemplate = document
       .querySelector(this._cardSelector)
       .content.querySelector(".card");
