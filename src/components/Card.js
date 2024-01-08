@@ -1,6 +1,6 @@
 export default class Card {
   constructor(
-    { name, link },
+    { name, link, _id },
     cardSelector,
     handleImageClick,
     handleDeleteClick
@@ -11,6 +11,7 @@ export default class Card {
     this._cardElement = null;
     this._handleImageClick = handleImageClick;
     this._handleDeleteClick = handleDeleteClick;
+    this._id = _id;
   }
 
   _handleLikeButtonClick = () => {
@@ -56,5 +57,13 @@ export default class Card {
     this._setEventListeners();
 
     return this._cardElement;
+  }
+
+  getId() {
+    return this._id;
+  }
+
+  removeCardElement() {
+    this._cardElement.remove();
   }
 }

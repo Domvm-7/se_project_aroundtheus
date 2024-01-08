@@ -80,6 +80,18 @@ class Api {
       .catch(this._handleError);
   }
 
+  // Delete a card
+  deleteCard(cardId) {
+    return fetch(`${this.options.baseUrl}/cards/${cardId}`, {
+      method: "DELETE",
+      headers: {
+        authorization: this.options.headers.authorization,
+      },
+    })
+      .then(this._handleResponse)
+      .catch(this._handleError);
+  }
+
   // Other methods for working with the API
 }
 

@@ -168,11 +168,24 @@ addNewCardButton.addEventListener("click", () => {
 
 /* Popup With Form Submit for Delete Card */
 function handleDeleteClick(card) {
+  const cardId = card.getId();
+
+  if (!cardId) {
+    console.error("Invalid cardId format. Must be a valid ObjectId.");
+    return;
+  }
+
   deleteCard.open();
 
   deleteCard.setSubmitAction(() => {
-    this._cardElement.remove();
-    deleteCard.close();
-    console.log(card);
+    api
+      .deleteCard(cardId)
+      .then(() => {
+        card.removeCardElement();
+        deleteCard.close();
+      })
+      .catch((error) => {
+        console.error("Error deleting card", error);
+      });
   });
 }
