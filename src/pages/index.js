@@ -56,6 +56,7 @@ cardPopup.setEventListeners();
 /* Get Initial Cards */
 let cardList;
 api.getInitialCards().then((initialCards) => {
+  console.log("intialCards", initialCards);
   cardList = new Section(
     {
       items: initialCards,
@@ -141,6 +142,7 @@ function handleAddCardFormSubmit({ name, link }) {
 }
 
 function renderCard(cardData) {
+  console.log("cardData", cardData);
   const card = new Card(
     cardData,
     "#card-template",

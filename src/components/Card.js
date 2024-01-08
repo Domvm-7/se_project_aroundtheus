@@ -2,7 +2,7 @@ import { api } from "../components/Api.js";
 
 export default class Card {
   constructor(
-    { name, link, _id },
+    { name, link, _id, isLiked },
     cardSelector,
     handleImageClick,
     handleDeleteClick
@@ -14,6 +14,7 @@ export default class Card {
     this._handleImageClick = handleImageClick;
     this._handleDeleteClick = handleDeleteClick;
     this._id = _id;
+    this._isLiked = isLiked;
   }
 
   _handleLikeButtonClick = () => {
