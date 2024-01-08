@@ -69,26 +69,18 @@
 
 .profile__image {
   position: relative;
-  border-radius: 50%;
-  overflow: hidden;
   height: 120px;
   width: 120px;
-  object-fit: cover;
+  border-radius: 50%;
+  overflow: hidden;
+  background-image: url("/src/images/jacques-cousteau.jpg");
+  background-size: cover;
   background-position: center;
   margin-right: 24px;
-  overflow: hidden;
-}
-
-.profile__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 .profile__image:hover {
   background-image: url("/src/images/avatar-edit.svg");
-  background-size: cover;
-  background-position: center;
   cursor: pointer;
 }
 
