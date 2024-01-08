@@ -40,6 +40,7 @@ const userProfile = new UserInfo(".profile__title", ".profile__description");
 
 // handleProfileEditSubmit(inputValues);
 
+/* Profile Image */
 const profileImage = document.querySelector(".profile__image");
 profileImage.addEventListener("click", () => {
   avatarPopup.open();
@@ -56,6 +57,7 @@ function handleAvatarSubmit({ avatarUrl }) {
     });
 }
 
+/* Get Initial Cards */
 let cardList;
 api.getInitialCards().then((initialCards) => {
   console.log("initialCards", initialCards);
@@ -71,7 +73,9 @@ api.getInitialCards().then((initialCards) => {
   );
   cardList.renderItems();
 
+  /* Get User Info */
   api.getUserInfo().then((userInfo) => {
+    debugger;
     console.log(userInfo);
 
     if (userInfo) {
