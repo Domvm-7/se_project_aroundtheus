@@ -179,8 +179,7 @@ function renderCard(cardData) {
     handleDeleteClick,
     handleFormSubmit
   );
-  const cardElement = card.getView();
-  return cardElement;
+  return card.getView();
 }
 
 /* Popup With Form Submit */
