@@ -76,8 +76,12 @@
 }
 
 .profile__image:hover {
-  content: url();
+  content: url("/src/images/edit-pen.svg");
   cursor: pointer;
+  width: 120px;
+  height: 120px;
+  opacity: 0.6;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 775px) {

@@ -1,6 +1,10 @@
 class Api {
   constructor(options) {
     this.options = options;
+    this._headers = {
+      authorization: this.options.headers.authorization,
+      "Content-Type": "application/json",
+    };
   }
 
   // Common method for handling fetch requests
@@ -19,9 +23,7 @@ class Api {
   // Get user information
   getUserInfo() {
     return fetch(`${this.options.baseUrl}/users/me`, {
-      headers: {
-        authorization: this.options.headers.authorization,
-      },
+      headers: this._headers,
     })
       .then(this._handleResponse)
       .catch(this._handleError);
@@ -31,10 +33,7 @@ class Api {
   updateUserProfile(data) {
     return fetch(`${this.options.baseUrl}/users/me`, {
       method: "PATCH",
-      headers: {
-        authorization: this.options.headers.authorization,
-        "Content-Type": "application/json",
-      },
+      headers: this._headers,
       body: JSON.stringify(data),
     })
       .then(this._handleResponse)
@@ -45,10 +44,7 @@ class Api {
   updateAvatar(data) {
     return fetch(`${this.options.baseUrl}/users/me/avatar`, {
       method: "PATCH",
-      headers: {
-        authorization: this.options.headers.authorization,
-        "Content-Type": "application/json",
-      },
+      headers: this._headers,
       body: JSON.stringify(data),
     })
       .then(this._handleResponse)
@@ -58,9 +54,7 @@ class Api {
   // Get initial cards
   getInitialCards() {
     return fetch(`${this.options.baseUrl}/cards`, {
-      headers: {
-        authorization: this.options.headers.authorization,
-      },
+      headers: this._headers,
     })
       .then(this._handleResponse)
       .catch(this._handleError);
@@ -70,10 +64,7 @@ class Api {
   createCard(data) {
     return fetch(`${this.options.baseUrl}/cards`, {
       method: "POST",
-      headers: {
-        authorization: this.options.headers.authorization,
-        "Content-Type": "application/json",
-      },
+      headers: this._headers,
       body: JSON.stringify(data),
     })
       .then(this._handleResponse)
@@ -84,9 +75,7 @@ class Api {
   deleteCard(cardId) {
     return fetch(`${this.options.baseUrl}/cards/${cardId}`, {
       method: "DELETE",
-      headers: {
-        authorization: this.options.headers.authorization,
-      },
+      headers: this._headers,
     })
       .then(this._handleResponse)
       .catch(this._handleError);
@@ -96,9 +85,7 @@ class Api {
   likeCard(cardId) {
     return fetch(`${this.options.baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",
-      headers: {
-        authorization: this.options.headers.authorization,
-      },
+      headers: this._headers,
     })
       .then(this._handleResponse)
       .catch(this._handleError);
@@ -108,9 +95,7 @@ class Api {
   dislikeCard(cardId) {
     return fetch(`${this.options.baseUrl}/cards/${cardId}/likes`, {
       method: "DELETE",
-      headers: {
-        authorization: this.options.headers.authorization,
-      },
+      headers: this._headers,
     })
       .then(this._handleResponse)
       .catch(this._handleError);
@@ -124,6 +109,5 @@ export const api = new Api({
   baseUrl: "https://around-api.en.tripleten-services.com/v1",
   headers: {
     authorization: "96c6ff05-502a-4b51-8415-98a1a2f3b371",
-    "Content-Type": "application/json",
   },
 });
