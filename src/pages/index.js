@@ -154,7 +154,7 @@ function handleAddCardFormSubmit({ name, link }) {
     .then((createdCard) => {
       console.log("Card created successfully", createdCard);
       const cardElement = renderCard(createdCard);
-      cardList.addItem(cardElement);
+      cardList.addCard(cardElement);
     })
     .catch((error) => {
       console.error("Error creating card", error);
