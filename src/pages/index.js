@@ -174,8 +174,7 @@ function handleLike(card) {
     .likeCard(card.getId())
     .then((updatedCard) => {
       console.log("Card liked successfully", updatedCard);
-      card._isLiked = true;
-      card._likeButton.classList.add("card__like-button_active");
+      card.setLikedState(true);
     })
     .catch((error) => {
       console.error("Error liking card", error);
@@ -187,8 +186,7 @@ function handleDislike(card) {
     .dislikeCard(card.getId())
     .then((updatedCard) => {
       console.log("Card disliked successfully", updatedCard);
-      card._isLiked = false;
-      card._likeButton.classList.remove("card__like-button_active");
+      card.setLikedState(false);
     })
     .catch((error) => {
       console.error("Error disliking card", error);
