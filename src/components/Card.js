@@ -1,11 +1,13 @@
-import { api } from "../components/Api.js";
+// import { api } from "../components/Api.js";
 
 export default class Card {
   constructor(
     { name, link, _id, isLiked },
     cardSelector,
     handleImageClick,
-    handleDeleteClick
+    handleDeleteClick,
+    handleLike,
+    handleDislike
   ) {
     this._name = name;
     this._link = link;
@@ -15,41 +17,17 @@ export default class Card {
     this._handleDeleteClick = handleDeleteClick;
     this._id = _id;
     this._isLiked = isLiked;
+    this._handleLike = handleLike;
+    this._handleDislike = handleDislike;
+    this._handleLikeButtonClick = this._handleLikeButtonClick.bind(this);
   }
 
-  _handleLikeButtonClick = () => {
-    const isLiked = this._likeButton.classList.contains(
-      "card__like-button_active"
-    );
-    if (isLiked) {
-      this._handleDislike();
+  _handleLikeButtonClick() {
+    if (this._isLiked) {
+      this._handleDislike(this);
     } else {
-      this._handleLike();
+      this._handleLike(this);
     }
-  };
-
-  _handleLike() {
-    api
-      .likeCard(this._id)
-      .then((updatedCard) => {
-        console.log("Card liked successfully", updatedCard);
-        this._likeButton.classList.add("card__like-button_active");
-      })
-      .catch((error) => {
-        console.error("Error liking card", error);
-      });
-  }
-
-  _handleDislike() {
-    api
-      .dislikeCard(this._id)
-      .then((updatedCard) => {
-        console.log("Card disliked successfully", updatedCard);
-        this._likeButton.classList.remove("card__like-button_active");
-      })
-      .catch((error) => {
-        console.error("Error disliking card", error);
-      });
   }
 
   _handleFormSubmit = (event) => {
@@ -92,6 +70,12 @@ export default class Card {
     cardTitleEl.textContent = this._name;
     cardImageEl.src = this._link;
     cardImageEl.alt = "Image of " + this._name;
+
+    // Set an active class if the card is liked
+    const likeButton = this._cardElement.querySelector(".card__like-button");
+    if (this._isLiked) {
+      likeButton.classList.add("card__like-button_active");
+    }
 
     this._setEventListeners();
 
