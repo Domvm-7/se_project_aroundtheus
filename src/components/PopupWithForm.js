@@ -5,6 +5,9 @@ export default class PopupWithForm extends Popup {
     super(popupSelector);
     this._popupForm = this.popupElement.querySelector(".popup__form");
     this._handleFormSubmit = handleFormSubmit;
+    // Store the initial text content of the submit button
+    this._submitButtonText =
+      this._popupForm.querySelector(".popup__button").textContent;
   }
   _getInputValues() {
     const inputList = Array.from(
@@ -25,6 +28,20 @@ export default class PopupWithForm extends Popup {
       this._handleFormSubmit(inputValues);
       this.close();
     });
+  }
+
+  setLoadingState(isLoading) {
+    const submitButton = this._popupForm.querySelector(".popup__button");
+
+    if (submitButton) {
+      if (isLoading) {
+        submitButton.textContent = "Saving...";
+      } else {
+        submitButton.textContent = this._submitButtonText;
+      }
+    } else {
+      console.error("Submit button not found in the form.");
+    }
   }
 
   close() {

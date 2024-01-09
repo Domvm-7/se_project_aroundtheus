@@ -101,6 +101,9 @@ function handleProfileEditSubmit(inputValues) {
     about: inputValues.about,
   };
 
+  // Change button text to "Saving..."
+  profilePopup.setLoadingState(true);
+
   api
     .updateUserProfile(updatedData)
     .then((updatedUserInfo) => {
@@ -109,11 +112,16 @@ function handleProfileEditSubmit(inputValues) {
     })
     .catch((error) => {
       console.error("Error updating user profile:", error);
+    })
+    .finally(() => {
+      // Reset button text to its original state
+      profilePopup.setLoadingState(false);
     });
 }
-
 function handleAvatarSubmit({ avatar }) {
-  debugger;
+  // Change button text to "Saving..."
+  avatarPopup.setLoadingState(true);
+
   api
     .updateAvatar({ avatar: avatar })
     .then((updatedUserInfo) => {
@@ -121,6 +129,10 @@ function handleAvatarSubmit({ avatar }) {
     })
     .catch((error) => {
       console.error("Error updating avatar:", error);
+    })
+    .finally(() => {
+      // Reset button text to its original state
+      avatarPopup.setLoadingState(false);
     });
 }
 
@@ -129,6 +141,9 @@ function handleFormSubmit() {
 }
 
 function handleAddCardFormSubmit({ name, link }) {
+  // Change button text to "Saving..."
+  cardPopup.setLoadingState(true);
+
   api
     .createCard({ name, link })
     .then((createdCard) => {
@@ -138,6 +153,10 @@ function handleAddCardFormSubmit({ name, link }) {
     })
     .catch((error) => {
       console.error("Error creating card", error);
+    })
+    .finally(() => {
+      // Reset button text to its original state
+      cardPopup.setLoadingState(false);
     });
 }
 
