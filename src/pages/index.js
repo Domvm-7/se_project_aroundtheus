@@ -76,16 +76,11 @@ api.getInitialCards().then((initialCards) => {
   );
   cardList.renderItems();
 
-  /* Get User Info */
   api
     .getUserInfo()
     .then((userInfo) => {
       console.log("User information retrieved successfully:", userInfo);
-      if (userInfo) {
-        document.querySelector(".profile__image").src = userInfo.avatar;
-      } else {
-        console.error("Invalid user information received");
-      }
+      userProfile.setUserInfo(userInfo);
     })
     .catch((error) => {
       console.error("Error getting user information:", error);
