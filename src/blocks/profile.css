@@ -76,7 +76,7 @@
 }
 
 .profile__image:hover {
-  content: url("/src/images/avatar-edit.svg");
+  content: url();
   cursor: pointer;
 }
 
