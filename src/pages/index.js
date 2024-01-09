@@ -25,7 +25,11 @@ const profileDescriptionInput = document.querySelector(
 );
 
 /* Api Endpoints */
-const userProfile = new UserInfo(".profile__title", ".profile__description");
+const userProfile = new UserInfo(
+  ".profile__title",
+  ".profile__description",
+  ".profile__image"
+);
 
 /* Form Validators */
 const profileEditForm = profileEditPopup.querySelector(".popup__form");
