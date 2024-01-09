@@ -145,10 +145,6 @@ function handleAvatarSubmit({ avatar }) {
     });
 }
 
-function handleFormSubmit() {
-  userProfile.setUserInfo(inputValues);
-}
-
 function handleAddCardFormSubmit({ name, link }) {
   // Change button text to "Saving..."
   cardPopup.setLoadingState(true);
