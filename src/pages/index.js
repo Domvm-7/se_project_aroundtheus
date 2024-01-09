@@ -70,18 +70,19 @@ api.getInitialCards().then((initialCards) => {
   cardList.renderItems();
 
   /* Get User Info */
-  api.getUserInfo().then((userInfo) => {
-    console.log(userInfo);
-
-    if (userInfo) {
-      userProfile.setUserInfo({
-        name: userInfo.name,
-        about: userInfo.about,
-      });
-    } else {
-      console.error("Invalid user information received");
-    }
-  });
+  api
+    .getUserInfo()
+    .then((userInfo) => {
+      console.log("User information retrieved successfully:", userInfo);
+      if (userInfo) {
+        document.querySelector(".profile__image").src = userInfo.avatar;
+      } else {
+        console.error("Invalid user information received");
+      }
+    })
+    .catch((error) => {
+      console.error("Error getting user information:", error);
+    });
 });
 
 /* Profile Image Click Handler */
