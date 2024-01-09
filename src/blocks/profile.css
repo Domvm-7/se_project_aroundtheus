@@ -66,21 +66,17 @@
   overflow: hidden;
   max-width: 373px;
 }
-
 .profile__image {
   position: relative;
   height: 120px;
   width: 120px;
   border-radius: 50%;
   overflow: hidden;
-  background-image: url("/src/images/jacques-cousteau.jpg");
-  background-size: cover;
-  background-position: center;
   margin-right: 24px;
 }
 
 .profile__image:hover {
-  background-image: url("/src/images/avatar-edit.svg");
+  content: url("/src/images/avatar-edit.svg");
   cursor: pointer;
 }
 
