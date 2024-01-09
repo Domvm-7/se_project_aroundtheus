@@ -30,12 +30,15 @@ const userProfile = new UserInfo(".profile__title", ".profile__description");
 /* Form Validators */
 const profileEditForm = profileEditPopup.querySelector(".popup__form");
 const addCardForm = addCardPopup.querySelector(".popup__form");
+const avatarForm = document.querySelector("#avatar-edit-popup .popup__form");
 
 const profileEditFormValidator = new FormValidator(settings, profileEditForm);
 const addCardFormValidator = new FormValidator(settings, addCardForm);
+const avatarFormValidator = new FormValidator(settings, avatarForm);
 
 profileEditFormValidator.enableValidation();
 addCardFormValidator.enableValidation();
+avatarFormValidator.enableValidation();
 
 /* Popup Instances */
 const deleteCard = new PopupWithFormSubmit("#trash-popup");
