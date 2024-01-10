@@ -9,6 +9,7 @@ export default class PopupWithForm extends Popup {
     this._submitButtonText =
       this._popupForm.querySelector(".popup__button").textContent;
   }
+
   _getInputValues() {
     const inputList = Array.from(
       this._popupForm.querySelectorAll(".popup__input")
@@ -37,6 +38,9 @@ export default class PopupWithForm extends Popup {
         submitButton.textContent = "Saving...";
       } else {
         submitButton.textContent = this._submitButtonText;
+
+        // Close the modal when the loading state is set to false
+        this.close();
       }
     } else {
       console.error("Submit button not found in the form.");
