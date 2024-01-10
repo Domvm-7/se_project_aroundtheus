@@ -95,6 +95,7 @@ api
 /* Profile Image Click Handler */
 const profileImage = document.querySelector(".profile__avatar-edit");
 profileImage.addEventListener("click", () => {
+  avatarFormValidator.resetValidation();
   avatarPopup.open();
 });
 
