@@ -58,11 +58,11 @@ export default class Card {
 
   _updateView() {
     const cardTitleEl = this._cardElement.querySelector(".card__title");
-    const cardImageEl = this._cardElement.querySelector(".card__image");
+
+    this._cardImageEl.src = this._link;
+    this._cardImageEl.alt = "Image of " + this._name;
 
     cardTitleEl.textContent = this._name;
-    cardImageEl.src = this._link;
-    cardImageEl.alt = "Image of " + this._name;
 
     this._updateLikeState();
   }
