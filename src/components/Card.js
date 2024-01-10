@@ -18,7 +18,6 @@ export default class Card {
     this._handleLike = handleLike;
     this._handleDislike = handleDislike;
     this._handleLikeButtonClick = this._handleLikeButtonClick.bind(this);
-    this._handleFormSubmit = this._handleFormSubmit.bind(this);
   }
 
   _handleLikeButtonClick() {
@@ -27,13 +26,6 @@ export default class Card {
     } else {
       this._handleLike(this);
     }
-  }
-
-  _handleFormSubmit(event) {
-    event.preventDefault();
-    const popup = document.getElementById("trash_button");
-    popup.classList.remove("popup__active");
-    this.removeCardElement();
   }
 
   _setEventListeners() {
