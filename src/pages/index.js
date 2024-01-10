@@ -65,14 +65,10 @@ let cardList;
 api
   .getInitialCards()
   .then((initialCards) => {
-    console.log("intialCards", initialCards);
     cardList = new Section(
       {
         items: initialCards,
-        renderer(item) {
-          const cardElement = renderCard(item);
-          this._container.prepend(cardElement);
-        },
+        renderer: (item) => renderCard(item),
       },
       ".cards__list"
     );
