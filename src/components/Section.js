@@ -7,7 +7,8 @@ export default class Section {
 
   renderItems() {
     this._items.forEach((item) => {
-      document.querySelector(".cards__list").prepend(this._renderer(item)); // refactor
+      const cardElement = this._renderer(item);
+      this.addCard(cardElement);
     });
   }
 
