@@ -118,6 +118,9 @@ function handleProfileEditSubmit(inputValues) {
     .then((updatedUserInfo) => {
       userProfile.setUserInfo(updatedUserInfo);
       console.log("User profile updated successfully:", updatedUserInfo);
+
+      // Close the popup after successful response
+      profilePopup.close();
     })
     .catch((error) => {
       console.error("Error updating user profile:", error);
@@ -136,6 +139,9 @@ function handleAvatarSubmit({ avatar }) {
     .then((updatedUserInfo) => {
       console.log("Avatar updated successfully:", updatedUserInfo);
       document.querySelector(".profile__image").src = updatedUserInfo.avatar;
+
+      // Close the popup after successful response
+      avatarPopup.close();
     })
     .catch((error) => {
       console.error("Error updating avatar:", error);
@@ -156,6 +162,9 @@ function handleAddCardFormSubmit({ name, link }) {
       console.log("Card created successfully", createdCard);
       const cardElement = renderCard(createdCard);
       cardList.addCard(cardElement);
+
+      // Close the popup after successful response
+      cardPopup.close();
     })
     .catch((error) => {
       console.error("Error creating card", error);
