@@ -76,7 +76,7 @@
 }
 
 .profile__image:hover {
-  content: url("/src/images/edit-pen.svg");
+  content: transparent url("/src/images/edit-avatar.svg");
   cursor: pointer;
   width: 120px;
   height: 120px;
