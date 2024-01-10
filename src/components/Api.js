@@ -24,9 +24,7 @@ class Api {
   getUserInfo() {
     return fetch(`${this.options.baseUrl}/users/me`, {
       headers: this._headers,
-    })
-      .then(this._handleResponse)
-      .catch(this._handleError);
+    }).then(this._handleResponse);
   }
 
   // Update user profile
@@ -76,9 +74,7 @@ class Api {
     return fetch(`${this.options.baseUrl}/cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
-    })
-      .then(this._handleResponse)
-      .catch(this._handleError);
+    }).then(this._handleResponse);
   }
 
   // Like a card

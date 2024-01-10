@@ -62,30 +62,35 @@ cardPopup.setEventListeners();
 
 /* Get Initial Cards */
 let cardList;
-api.getInitialCards().then((initialCards) => {
-  console.log("intialCards", initialCards);
-  cardList = new Section(
-    {
-      items: initialCards,
-      renderer(item) {
-        const cardElement = renderCard(item);
-        this._container.prepend(cardElement);
+api
+  .getInitialCards()
+  .then((initialCards) => {
+    console.log("intialCards", initialCards);
+    cardList = new Section(
+      {
+        items: initialCards,
+        renderer(item) {
+          const cardElement = renderCard(item);
+          this._container.prepend(cardElement);
+        },
       },
-    },
-    ".cards__list"
-  );
-  cardList.renderItems();
+      ".cards__list"
+    );
+    cardList.renderItems();
+  })
+  .catch((error) => {
+    console.error("Error in getInitialCards:", error);
+  });
 
-  api
-    .getUserInfo()
-    .then((userInfo) => {
-      console.log("User information retrieved successfully:", userInfo);
-      userProfile.setUserInfo(userInfo);
-    })
-    .catch((error) => {
-      console.error("Error getting user information:", error);
-    });
-});
+api
+  .getUserInfo()
+  .then((userInfo) => {
+    console.log("User information retrieved successfully:", userInfo);
+    userProfile.setUserInfo(userInfo);
+  })
+  .catch((error) => {
+    console.error("Error getting user information:", error);
+  });
 
 /* Profile Image Click Handler */
 const profileImage = document.querySelector(".profile__avatar-edit");
