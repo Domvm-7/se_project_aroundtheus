@@ -112,7 +112,7 @@ function handleProfileEditSubmit(inputValues) {
   api
     .updateUserProfile(updatedData)
     .then((updatedUserInfo) => {
-      userProfile.setUserInfo(updatedUserInfo);
+      userProfile.updateUserAndAvatar(updatedUserInfo);
       console.log("User profile updated successfully:", updatedUserInfo);
 
       // Close the popup after successful response
@@ -134,7 +134,7 @@ function handleAvatarSubmit({ avatar }) {
     .updateAvatar({ avatar: avatar })
     .then((updatedUserInfo) => {
       console.log("Avatar updated successfully:", updatedUserInfo);
-      document.querySelector(".profile__image").src = updatedUserInfo.avatar;
+      userProfile.updateAvatar(updatedUserInfo.avatar);
 
       // Close the popup after successful response
       avatarPopup.close();

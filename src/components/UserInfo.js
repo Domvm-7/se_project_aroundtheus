@@ -18,4 +18,12 @@ export default class UserInfo {
     this._aboutElement.textContent = about;
     this._avatarElement.src = avatar;
   }
+
+  updateAvatar(avatarUrl) {
+    this._avatarElement.src = avatarUrl;
+  }
+
+  updateUserAndAvatar(updatedUserInfo) {
+    this.setUserInfo(updatedUserInfo);
+  }
 }
