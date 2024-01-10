@@ -33,9 +33,7 @@ class Api {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(data),
-    })
-      .then(this._handleResponse)
-      .catch(this._handleError);
+    }).then(this._handleResponse);
   }
 
   // Update user avatar
@@ -44,18 +42,14 @@ class Api {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(data),
-    })
-      .then(this._handleResponse)
-      .catch(this._handleError);
+    }).then(this._handleResponse);
   }
 
   // Get initial cards
   getInitialCards() {
     return fetch(`${this.options.baseUrl}/cards`, {
       headers: this._headers,
-    })
-      .then(this._handleResponse)
-      .catch(this._handleError);
+    }).then(this._handleResponse);
   }
 
   // Create a new card
@@ -64,9 +58,7 @@ class Api {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify(data),
-    })
-      .then(this._handleResponse)
-      .catch(this._handleError);
+    }).then(this._handleResponse);
   }
 
   // Delete a card
@@ -82,9 +74,7 @@ class Api {
     return fetch(`${this.options.baseUrl}/cards/${cardId}/likes`, {
       method: "PUT",
       headers: this._headers,
-    })
-      .then(this._handleResponse)
-      .catch(this._handleError);
+    }).then(this._handleResponse);
   }
 
   // Dislike a card
@@ -92,9 +82,7 @@ class Api {
     return fetch(`${this.options.baseUrl}/cards/${cardId}/likes`, {
       method: "DELETE",
       headers: this._headers,
-    })
-      .then(this._handleResponse)
-      .catch(this._handleError);
+    }).then(this._handleResponse);
   }
 
   // Other methods for working with the API
