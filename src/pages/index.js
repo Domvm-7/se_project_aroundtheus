@@ -69,7 +69,7 @@ api.getInitialCards().then((initialCards) => {
       items: initialCards,
       renderer(item) {
         const cardElement = renderCard(item);
-        this._container.appendChild(cardElement);
+        this._container.prepend(cardElement);
       },
     },
     ".cards__list"
