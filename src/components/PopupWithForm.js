@@ -38,9 +38,6 @@ export default class PopupWithForm extends Popup {
         submitButton.textContent = "Saving...";
       } else {
         submitButton.textContent = this._submitButtonText;
-
-        // Close the modal when the loading state is set to false
-        this.close();
       }
     } else {
       console.error("Submit button not found in the form.");
