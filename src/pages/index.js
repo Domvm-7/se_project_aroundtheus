@@ -129,8 +129,7 @@ function handleAvatarSubmit({ avatar }) {
     .updateAvatar({ avatar: avatar })
     .then((updatedUserInfo) => {
       console.log("Avatar updated successfully:", updatedUserInfo);
-      document.querySelector(".profile__avatar-edit").src =
-        updatedUserInfo.avatar;
+      document.querySelector(".profile__image").src = updatedUserInfo.avatar;
     })
     .catch((error) => {
       console.error("Error updating avatar:", error);
