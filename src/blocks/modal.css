@@ -26,6 +26,20 @@
   height: 330px;
 }
 
+.popup__container-avatar {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 430px;
+}
+
+.popup__container-trash {
+  position: relative;
+  background-color: #fff;
+  border-radius: 10px;
+  width: 430px;
+}
+
 .popup__close {
   cursor: pointer;
   position: absolute;
@@ -49,6 +63,18 @@
   line-height: 29px;
   margin-left: 36px;
   margin-top: 34px;
+}
+
+.popup__heading-trash {
+  color: #000;
+  width: 100%;
+  min-height: 23px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  margin-left: 36px;
+  margin-top: 34px;
+  margin-bottom: 0;
 }
 
 .popup__input {
