@@ -88,7 +88,7 @@ api.getInitialCards().then((initialCards) => {
 });
 
 /* Profile Image Click Handler */
-const profileImage = document.querySelector(".profile__image");
+const profileImage = document.querySelector(".profile__avatar-edit");
 profileImage.addEventListener("click", () => {
   avatarPopup.open();
 });
@@ -129,7 +129,8 @@ function handleAvatarSubmit({ avatar }) {
     .updateAvatar({ avatar: avatar })
     .then((updatedUserInfo) => {
       console.log("Avatar updated successfully:", updatedUserInfo);
-      document.querySelector(".profile__image").src = updatedUserInfo.avatar;
+      document.querySelector(".profile__avatar-edit").src =
+        updatedUserInfo.avatar;
     })
     .catch((error) => {
       console.error("Error updating avatar:", error);
